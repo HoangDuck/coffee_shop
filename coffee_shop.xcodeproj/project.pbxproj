@@ -16,6 +16,11 @@
 		335580202B7F5E3000974CF7 /* coffee_shopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355801F2B7F5E3000974CF7 /* coffee_shopTests.swift */; };
 		3355802A2B7F5E3000974CF7 /* coffee_shopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335580292B7F5E3000974CF7 /* coffee_shopUITests.swift */; };
 		3355802C2B7F5E3000974CF7 /* coffee_shopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355802B2B7F5E3000974CF7 /* coffee_shopUITestsLaunchTests.swift */; };
+		335580412B7F614A00974CF7 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335580402B7F614A00974CF7 /* OnboardViewController.swift */; };
+		335580432B7F616400974CF7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335580422B7F616400974CF7 /* HomeViewController.swift */; };
+		335580452B7F618300974CF7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335580442B7F618300974CF7 /* DetailViewController.swift */; };
+		335580472B7F619000974CF7 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335580462B7F619000974CF7 /* OrderViewController.swift */; };
+		335580492B7F619D00974CF7 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335580482B7F619D00974CF7 /* DeliveryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		335580252B7F5E3000974CF7 /* coffee_shopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coffee_shopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		335580292B7F5E3000974CF7 /* coffee_shopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coffee_shopUITests.swift; sourceTree = "<group>"; };
 		3355802B2B7F5E3000974CF7 /* coffee_shopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coffee_shopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		335580402B7F614A00974CF7 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		335580422B7F616400974CF7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		335580442B7F618300974CF7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		335580462B7F619000974CF7 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		335580482B7F619D00974CF7 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +109,11 @@
 		335580072B7F5E2F00974CF7 /* coffee_shop */ = {
 			isa = PBXGroup;
 			children = (
-				335580082B7F5E2F00974CF7 /* AppDelegate.swift */,
-				3355800A2B7F5E2F00974CF7 /* SceneDelegate.swift */,
-				3355800C2B7F5E2F00974CF7 /* ViewController.swift */,
-				3355800E2B7F5E2F00974CF7 /* Main.storyboard */,
+				335580382B7F5F5F00974CF7 /* Application */,
 				335580112B7F5E3000974CF7 /* Assets.xcassets */,
-				335580132B7F5E3000974CF7 /* LaunchScreen.storyboard */,
 				335580162B7F5E3000974CF7 /* Info.plist */,
+				3355803A2B7F604B00974CF7 /* Scenes */,
+				335580392B7F5F7F00974CF7 /* Supporting Files */,
 			);
 			path = coffee_shop;
 			sourceTree = "<group>";
@@ -125,6 +133,77 @@
 				3355802B2B7F5E3000974CF7 /* coffee_shopUITestsLaunchTests.swift */,
 			);
 			path = coffee_shopUITests;
+			sourceTree = "<group>";
+		};
+		335580382B7F5F5F00974CF7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				335580082B7F5E2F00974CF7 /* AppDelegate.swift */,
+				3355800A2B7F5E2F00974CF7 /* SceneDelegate.swift */,
+				3355800C2B7F5E2F00974CF7 /* ViewController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		335580392B7F5F7F00974CF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3355800E2B7F5E2F00974CF7 /* Main.storyboard */,
+				335580132B7F5E3000974CF7 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3355803A2B7F604B00974CF7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3355803F2B7F60E300974CF7 /* Delivery */,
+				3355803E2B7F60DA00974CF7 /* Order */,
+				3355803D2B7F60D300974CF7 /* Detail */,
+				3355803C2B7F60C100974CF7 /* Home */,
+				3355803B2B7F605E00974CF7 /* Onboarding */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		3355803B2B7F605E00974CF7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				335580402B7F614A00974CF7 /* OnboardViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3355803C2B7F60C100974CF7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				335580422B7F616400974CF7 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3355803D2B7F60D300974CF7 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				335580442B7F618300974CF7 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		3355803E2B7F60DA00974CF7 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				335580462B7F619000974CF7 /* OrderViewController.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		3355803F2B7F60E300974CF7 /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				335580482B7F619D00974CF7 /* DeliveryViewController.swift */,
+			);
+			path = Delivery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +337,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335580432B7F616400974CF7 /* HomeViewController.swift in Sources */,
 				3355800D2B7F5E2F00974CF7 /* ViewController.swift in Sources */,
+				335580492B7F619D00974CF7 /* DeliveryViewController.swift in Sources */,
 				335580092B7F5E2F00974CF7 /* AppDelegate.swift in Sources */,
+				335580472B7F619000974CF7 /* OrderViewController.swift in Sources */,
+				335580452B7F618300974CF7 /* DetailViewController.swift in Sources */,
+				335580412B7F614A00974CF7 /* OnboardViewController.swift in Sources */,
 				3355800B2B7F5E2F00974CF7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LSy-D3-a3C">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboard View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="OnboardViewController" customModule="coffee_shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee_onboard" translatesAutoresizingMaskIntoConstraints="NO" id="gcm-wX-chl">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="536"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-FH-dbR">
+                                <rect key="frame" x="30" y="758" width="333" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="U8D-D2-SJP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Get Started" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="21"/>
+                                    <color key="baseBackgroundColor" name="button_color"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="handleGetStarted" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gxk-G2-Ljy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee so good, your taste buds will love it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xN-gz-QYa">
+                                <rect key="frame" x="45" y="536" width="303" height="122"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The best grain, the finest roast, the powerful flavor." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNq-nS-SRp">
+                                <rect key="frame" x="40" y="668" width="313" height="33.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="secondary_title_onboard"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lNq-nS-SRp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="0VU-JQ-RGf"/>
+                            <constraint firstItem="gcm-wX-chl" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="5g1-Wm-CPx"/>
+                            <constraint firstItem="oGo-FH-dbR" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-30" id="8gI-HH-IhW"/>
+                            <constraint firstItem="gcm-wX-chl" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="BwU-7K-yio"/>
+                            <constraint firstItem="lNq-nS-SRp" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-40" id="F28-dY-rgN"/>
+                            <constraint firstItem="9xN-gz-QYa" firstAttribute="bottom" secondItem="lNq-nS-SRp" secondAttribute="top" constant="-10" id="MWb-Vh-EnT"/>
+                            <constraint firstItem="oGo-FH-dbR" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Va6-bS-5XG"/>
+                            <constraint firstItem="9xN-gz-QYa" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-45" id="WXG-wf-Yr4"/>
+                            <constraint firstItem="oGo-FH-dbR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="XkI-cg-Nl7"/>
+                            <constraint firstAttribute="trailing" secondItem="gcm-wX-chl" secondAttribute="trailing" id="iKQ-dM-5mV"/>
+                            <constraint firstItem="9xN-gz-QYa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="45" id="nHZ-Jc-f0o"/>
+                            <constraint firstItem="9xN-gz-QYa" firstAttribute="top" secondItem="gcm-wX-chl" secondAttribute="bottom" id="zFm-FG-heI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rig-ZD-Kcp"/>
+                    <connections>
+                        <outlet property="getStartedButton" destination="oGo-FH-dbR" id="S6V-Zg-1nx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932.06106870229007" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ip6-la-X4k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LSy-D3-a3C" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="isE-hT-GIh">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="PoZ-r9-Xew"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t4B-QP-1bd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.343511450381679" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="coffee_onboard" width="375" height="536"/>
+        <namedColor name="button_color">
+            <color red="0.77647058823529413" green="0.48627450980392156" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondary_title_onboard">
+            <color red="0.66274509803921566" green="0.66274509803921566" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

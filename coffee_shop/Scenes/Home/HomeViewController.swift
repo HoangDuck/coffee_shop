@@ -9,6 +9,15 @@ import UIKit
 
 class HomeViewController: UITabBarController, UITabBarControllerDelegate {
     
+    init(){
+        super.init(nibName: nil, bundle: nil)
+        object_setClass(self.tabBar, CustomTabBar.self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -17,46 +26,50 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("view will appear")
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        view.backgroundColor = .white
+        setUpTabBar()
+        setUpUI()
+    }
+    
+    private func setUpTabBar() {
         let tab1 = MenuTabViewController()
-        
-        let tab2 = UIViewController()
-        tab2.view.backgroundColor = .red
-        
-        let tab3 = UIViewController()
-        tab3.view.backgroundColor = .blue
-        
-        let tab4 = UIViewController()
-        tab4.view.backgroundColor = .brown
-        
+        let tab2 = MenuTabViewController()
+        let tab3 = MenuTabViewController()
+        let tab4 = MenuTabViewController()
         tab1.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Home"), tag: 0)
         tab2.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Heart"), tag: 1)
         tab3.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Bag 3"), tag: 2)
         tab4.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Notification"), tag: 3)
-        
         viewControllers = [
             tab1,
             tab2,
             tab3,
             tab4,
          ]
-        
-        selectedIndex = 0
-        
-        tabBar.isTranslucent = false
-        tabBar.tintColor = UIColor(named: "button_color")        
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        print("view will layout subviews")
+    private func setUpUI() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        tabBar.layer.masksToBounds = true
+        tabBar.layer.cornerRadius = 30
+        
+        tabBar.tintColor = UIColor(named: "button_color")
         
         if #available(iOS 13, *) {
-            self.tabBar.standardAppearance.backgroundColor = .red
+            let appearance = UITabBarAppearance()
+            appearance.configureWithTransparentBackground()
+            appearance.backgroundColor = .white
+            tabBar.standardAppearance = appearance;
+            tabBar.scrollEdgeAppearance = appearance
         } else {
-            self.tabBar.barTintColor = .red
+            self.tabBar.barTintColor = .white
+        }
+    }
+    
+    class CustomTabBar: UITabBar {
+        override func sizeThatFits(_ size: CGSize) -> CGSize {
+            var sizeThatFits = super.sizeThatFits(size)
+            sizeThatFits.height = 120
+            return sizeThatFits
         }
     }
 }

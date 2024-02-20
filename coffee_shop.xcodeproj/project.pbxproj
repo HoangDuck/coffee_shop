@@ -27,7 +27,6 @@
 		C0C4CE0D2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE0C2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift */; };
 		C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE0E2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift */; };
 		C0C4CE112B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */; };
-		C0C4CE132B84B63100C5A5CA /* OnBoardingV2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C4CE122B84B63100C5A5CA /* OnBoardingV2.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +71,6 @@
 		C0C4CE0C2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+Location+Avatar.swift"; sourceTree = "<group>"; };
 		C0C4CE0E2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+Promote.swift"; sourceTree = "<group>"; };
 		C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+CoffeeMenu.swift"; sourceTree = "<group>"; };
-		C0C4CE122B84B63100C5A5CA /* OnBoardingV2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoardingV2.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +183,6 @@
 			children = (
 				335580402B7F614A00974CF7 /* OnboardViewController.swift */,
 				3355804A2B7F63F400974CF7 /* OnboardViewController.storyboard */,
-				C0C4CE122B84B63100C5A5CA /* OnBoardingV2.storyboard */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -341,7 +338,6 @@
 			files = (
 				335580152B7F5E3000974CF7 /* LaunchScreen.storyboard in Resources */,
 				335580122B7F5E3000974CF7 /* Assets.xcassets in Resources */,
-				C0C4CE132B84B63100C5A5CA /* OnBoardingV2.storyboard in Resources */,
 				3355804B2B7F63F400974CF7 /* OnboardViewController.storyboard in Resources */,
 				335580102B7F5E2F00974CF7 /* Main.storyboard in Resources */,
 			);

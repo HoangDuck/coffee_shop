@@ -8,7 +8,6 @@
 import UIKit
 
 class MenuTabViewController: UIViewController {
-    
     //View scroll view
     let scrollView: UIScrollView = UIScrollView()
     let viewPad: UIView = UIView()
@@ -18,6 +17,9 @@ class MenuTabViewController: UIViewController {
     let locationTitle: UILabel = UILabel()
     let location: UILabel = UILabel()
     let avatar: UIImage = UIImage(named: "avatar")!
+    
+    //Views search bars
+    let searchBar: TextFieldWithPadding = TextFieldWithPadding()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +33,12 @@ class MenuTabViewController: UIViewController {
     }
     
     private func setUpScrollUI(){
-        scrollView.isScrollEnabled = true
+        scrollView.contentSize = CGSize(width: .zero, height: view.frame.height*2)
         addPadSearch()
         addLocationAvatar()
+        addSearchBar()
+        addPromotionView()
+        addMenuCoffee()
     }
     
     private func addPadSearch() {
@@ -53,7 +58,34 @@ class MenuTabViewController: UIViewController {
         viewPad.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         viewPad.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         viewPad.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        viewPad.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        viewPad.heightAnchor.constraint(equalToConstant: 280).isActive = true
         viewPad.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+    }
+}
+
+class TextFieldWithPadding: UITextField {
+    var textPadding = UIEdgeInsets(
+        top: 0,
+        left: 10,
+        bottom: 0,
+        right: 10
+    )
+    var rightViewPadding = UIEdgeInsets(
+        top: 0, left: 0, bottom: 0, right: 5
+    )
+
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.textRect(forBounds: bounds)
+        return rect.inset(by: textPadding)
+    }
+
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.editingRect(forBounds: bounds)
+        return rect.inset(by: textPadding)
+    }
+    
+    override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.rightViewRect(forBounds: bounds)
+        return rect.inset(by: rightViewPadding)
     }
 }

@@ -8,6 +8,8 @@
 import UIKit
 
 extension MenuTabViewController {
-    
+    func addMenuCoffee() {
+        
+    }
 }
 

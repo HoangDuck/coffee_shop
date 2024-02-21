@@ -10,6 +10,11 @@ import UIKit
 extension MenuTabViewController {
     
     func addLocationAvatar() {
+        addTitleLocation()
+        addAvatar()
+    }
+    
+    func addTitleLocation() {
         //title location
         locationTitle.text = "Location"
         locationTitle.font = UIFont.preferredFont(forTextStyle: .body)
@@ -29,13 +34,18 @@ extension MenuTabViewController {
         location.leadingAnchor.constraint(equalTo: locationTitle.leadingAnchor).isActive = true
         
         //icon location
-        let image = UIImageView(image: UIImage(systemName: "search")?.withTintColor(.white))
+        let imageIcon = UIImage(systemName: "chevron.down")
+        let image = UIImageView()
+        image.image = imageIcon
+        image.tintColor = .white
         scrollView.addSubview(image)
         image.translatesAutoresizingMaskIntoConstraints = false
         image.leadingAnchor.constraint(equalTo: location.trailingAnchor, constant: 5).isActive = true
         image.topAnchor.constraint(equalTo: location.topAnchor).isActive = true
         image.bottomAnchor.constraint(equalTo: location.bottomAnchor).isActive = true
-        
+    }
+    
+    func addAvatar(){
         //avatar
         let avatarView = UIImageView(image: avatar)
         scrollView.addSubview(avatarView)

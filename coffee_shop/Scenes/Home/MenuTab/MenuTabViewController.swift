@@ -70,8 +70,11 @@ class TextFieldWithPadding: UITextField {
         bottom: 0,
         right: 10
     )
+    
+    var leftViewPadding = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: -20)
+    
     var rightViewPadding = UIEdgeInsets(
-        top: 0, left: 0, bottom: 0, right: 5
+        top: 0, left: -5, bottom: 0, right: 5
     )
 
     override func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -82,6 +85,11 @@ class TextFieldWithPadding: UITextField {
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.editingRect(forBounds: bounds)
         return rect.inset(by: textPadding)
+    }
+    
+    override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.leftViewRect(forBounds: bounds)
+        return rect.inset(by: leftViewPadding)
     }
     
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {

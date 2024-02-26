@@ -44,6 +44,11 @@ class ItemCoffeeView: UICollectionViewCell, UIContentView {
         layer.cornerRadius = 10
         //add image view coffee
         addSubview(imageView)
+        addSubview(starView)
+        addSubview(titleCoffee)
+        addSubview(descriptionCoffee)
+        addSubview(priceCoffee)
+        addSubview(rateCoffee)
     }
     
     required init?(coder: NSCoder) {

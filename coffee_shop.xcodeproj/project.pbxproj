@@ -30,6 +30,7 @@
 		C0F5D2892B8C341A006EB2D1 /* CoffeeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D2882B8C341A006EB2D1 /* CoffeeCategory.swift */; };
 		C0F5D28B2B8C34E5006EB2D1 /* CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */; };
 		C0F5D28E2B8C6BF4006EB2D1 /* ItemCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */; };
+		C0F5D2912B8CA0AC006EB2D1 /* ListCoffeeOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D2902B8CA0AC006EB2D1 /* ListCoffeeOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		C0F5D2882B8C341A006EB2D1 /* CoffeeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCategory.swift; sourceTree = "<group>"; };
 		C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMenu.swift; sourceTree = "<group>"; };
 		C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCoffeeView.swift; sourceTree = "<group>"; };
+		C0F5D2902B8CA0AC006EB2D1 /* ListCoffeeOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoffeeOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 		3355803C2B7F60C100974CF7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C0F5D28F2B8CA093006EB2D1 /* ListMenuCoffeeCustom */,
 				C0F5D28C2B8C6BCB006EB2D1 /* ItemView */,
 				C0F5D2872B8C3409006EB2D1 /* Model */,
 				338F057E2B833FE200123EA3 /* MenuTab */,
@@ -255,6 +258,14 @@
 				C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */,
 			);
 			path = ItemView;
+			sourceTree = "<group>";
+		};
+		C0F5D28F2B8CA093006EB2D1 /* ListMenuCoffeeCustom */ = {
+			isa = PBXGroup;
+			children = (
+				C0F5D2902B8CA0AC006EB2D1 /* ListCoffeeOption.swift */,
+			);
+			path = ListMenuCoffeeCustom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +407,7 @@
 				335580432B7F616400974CF7 /* HomeViewController.swift in Sources */,
 				C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */,
 				3355800D2B7F5E2F00974CF7 /* ViewController.swift in Sources */,
+				C0F5D2912B8CA0AC006EB2D1 /* ListCoffeeOption.swift in Sources */,
 				335580492B7F619D00974CF7 /* DeliveryViewController.swift in Sources */,
 				335580092B7F5E2F00974CF7 /* AppDelegate.swift in Sources */,
 				338F05802B833FF700123EA3 /* MenuTabViewController.swift in Sources */,

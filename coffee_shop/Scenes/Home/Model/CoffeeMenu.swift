@@ -7,8 +7,7 @@
 
 import UIKit
 
-struct CoffeeMenu: Equatable, Identifiable {
-    var id: String = UUID().uuidString
+struct CoffeeMenu {
     let imageMenu: UIImage
     let ratings: String
     let title: String

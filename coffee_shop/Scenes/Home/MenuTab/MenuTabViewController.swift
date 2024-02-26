@@ -23,6 +23,9 @@ class MenuTabViewController: UIViewController {
     
     //views horizontal list view
     let coffeeCategoryView: UIScrollView = UIScrollView()
+    //views menu coffees
+    var coffeeOptionView: UICollectionView!
+    var dataSource: DataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()

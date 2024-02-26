@@ -21,6 +21,9 @@ class MenuTabViewController: UIViewController {
     //Views search bars
     let searchBar: TextFieldWithPadding = TextFieldWithPadding()
     
+    //views horizontal list view
+    let coffeeCategoryView: UIScrollView = UIScrollView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -43,6 +46,7 @@ class MenuTabViewController: UIViewController {
     
     private func addPadSearch() {
         viewPad.backgroundColor = UIColor(named: "pad_search")
+        scrollView.showsVerticalScrollIndicator = true
         scrollView.addSubview(viewPad)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

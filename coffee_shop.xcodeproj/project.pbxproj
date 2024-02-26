@@ -27,6 +27,8 @@
 		C0C4CE0D2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE0C2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift */; };
 		C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE0E2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift */; };
 		C0C4CE112B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */; };
+		C0F5D2892B8C341A006EB2D1 /* CoffeeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D2882B8C341A006EB2D1 /* CoffeeCategory.swift */; };
+		C0F5D28B2B8C34E5006EB2D1 /* CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		C0C4CE0C2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+Location+Avatar.swift"; sourceTree = "<group>"; };
 		C0C4CE0E2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+Promote.swift"; sourceTree = "<group>"; };
 		C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+CoffeeMenu.swift"; sourceTree = "<group>"; };
+		C0F5D2882B8C341A006EB2D1 /* CoffeeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCategory.swift; sourceTree = "<group>"; };
+		C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 		3355803C2B7F60C100974CF7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C0F5D2872B8C3409006EB2D1 /* Model */,
 				338F057E2B833FE200123EA3 /* MenuTab */,
 				335580422B7F616400974CF7 /* HomeViewController.swift */,
 			);
@@ -230,6 +235,15 @@
 				C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */,
 			);
 			path = MenuTab;
+			sourceTree = "<group>";
+		};
+		C0F5D2872B8C3409006EB2D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0F5D2882B8C341A006EB2D1 /* CoffeeCategory.swift */,
+				C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +380,7 @@
 			files = (
 				C0C4CE112B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift in Sources */,
 				C0C4CE0D2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift in Sources */,
+				C0F5D28B2B8C34E5006EB2D1 /* CoffeeMenu.swift in Sources */,
 				335580432B7F616400974CF7 /* HomeViewController.swift in Sources */,
 				C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */,
 				3355800D2B7F5E2F00974CF7 /* ViewController.swift in Sources */,
@@ -373,6 +388,7 @@
 				335580092B7F5E2F00974CF7 /* AppDelegate.swift in Sources */,
 				338F05802B833FF700123EA3 /* MenuTabViewController.swift in Sources */,
 				335580472B7F619000974CF7 /* OrderViewController.swift in Sources */,
+				C0F5D2892B8C341A006EB2D1 /* CoffeeCategory.swift in Sources */,
 				335580452B7F618300974CF7 /* DetailViewController.swift in Sources */,
 				335580412B7F614A00974CF7 /* OnboardViewController.swift in Sources */,
 				3355800B2B7F5E2F00974CF7 /* SceneDelegate.swift in Sources */,

@@ -12,19 +12,31 @@ class ListCoffeeOption: UICollectionView, UICollectionViewDataSource, UICollecti
     var coffees: [CoffeeMenu] = []
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("=======\(coffees.count)========")
         return coffees.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CoffeeItem", for: indexPath)
-        var contentConfiguration = ItemCoffeeView.Configuration()
-        let itemContentData = coffees[indexPath.row]
-        contentConfiguration.imageCoffee = itemContentData.imageMenu
-        contentConfiguration.descriptionCoffee = itemContentData.description
-        contentConfiguration.priceCoffee = itemContentData.price
-        contentConfiguration.ratingStar = itemContentData.ratings
-        contentConfiguration.titleCoffee = itemContentData.title
-        cell.contentConfiguration = contentConfiguration
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CoffeeItem", for: indexPath) as! ItemCoffeeView
+        let coffeeItem = coffees[indexPath.row]
+        //image coffee
+        cell.imageView = UIImageView(image: coffeeItem.imageMenu)
+        //title coffee
+        cell.titleCoffee.text = coffeeItem.title
+        cell.titleCoffee.textColor = .black
+        cell.titleCoffee.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        //description coffee
+        cell.descriptionCoffee.text = coffeeItem.description
+        cell.descriptionCoffee.textColor = UIColor(named: "description_coffee")
+        cell.descriptionCoffee.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        //price coffee
+        cell.priceCoffee.text = coffeeItem.price
+        cell.priceCoffee.textColor = .black
+        cell.priceCoffee.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        //star rating coffee
+        cell.rateCoffee.text = coffeeItem.ratings
+        cell.rateCoffee.textColor = .white
+        cell.rateCoffee.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
         return cell
     }
     
@@ -37,14 +49,12 @@ class ListCoffeeOption: UICollectionView, UICollectionViewDataSource, UICollecti
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         super.init(frame: .zero, collectionViewLayout: layout)
+        self.register(ItemCoffeeView.self, forCellWithReuseIdentifier: "CoffeeItem")
         self.dataSource = self
         self.delegate = self
-        self.register(ItemCoffeeView.self, forCellWithReuseIdentifier: "CoffeeItem")
     }
     
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
-    
 }

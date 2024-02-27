@@ -24,7 +24,7 @@ class MenuTabViewController: UIViewController {
     //views horizontal list view
     let coffeeCategoryView: UIScrollView = UIScrollView()
     //views menu coffees
-    var coffeeOptionView: ListCoffeeOption = ListCoffeeOption(coffees: CoffeeMenu.mockMenu)
+    var coffeeOptionView: UICollectionView!
     let coffees: [CoffeeMenu] = CoffeeMenu.mockMenu
     
     override func viewDidLoad() {

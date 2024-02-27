@@ -7,19 +7,52 @@
 
 import UIKit
 
-extension MenuTabViewController{
+extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return coffees.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCoffeeView.identifier, for: indexPath) as! ItemCoffeeView
+        let coffeeItem = coffees[indexPath.row]
+        //image coffee
+        cell.imageView = UIImageView(image: coffeeItem.imageMenu)
+        //title coffee
+        cell.titleCoffee.text = coffeeItem.title
+        cell.titleCoffee.textColor = .black
+        cell.titleCoffee.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        //description coffee
+        cell.descriptionCoffee.text = coffeeItem.description
+        cell.descriptionCoffee.textColor = UIColor(named: "description_coffee")
+        cell.descriptionCoffee.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        //price coffee
+        cell.priceCoffee.text = coffeeItem.price
+        cell.priceCoffee.textColor = .black
+        cell.priceCoffee.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        //star rating coffee
+        cell.rateCoffee.text = coffeeItem.ratings
+        cell.rateCoffee.textColor = .white
+        cell.rateCoffee.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
+        return cell
+    }
+    
     func addMenuCoffee() {
         addMenuCategoryCoffee()
         addMenuOptionCoffee()
     }
     
     func addMenuOptionCoffee() {
+        let layout = UICollectionViewLayout()
+        coffeeOptionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        coffeeOptionView.register(ItemCoffeeView.self, forCellWithReuseIdentifier:  ItemCoffeeView.identifier)
         scrollView.addSubview(coffeeOptionView)
+        coffeeOptionView.backgroundColor = .red
         coffeeOptionView.translatesAutoresizingMaskIntoConstraints = false
-        coffeeOptionView.topAnchor.constraint(equalTo: coffeeCategoryView.bottomAnchor, constant: 20).isActive = true
-        coffeeOptionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        coffeeOptionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        coffeeOptionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        coffeeOptionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        coffeeOptionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         coffeeOptionView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        
     }
     
    ///COFFEE CATEGORY MENU

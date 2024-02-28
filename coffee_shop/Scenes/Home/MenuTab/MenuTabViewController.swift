@@ -33,13 +33,21 @@ class MenuTabViewController: UIViewController {
     }
     
     private func setUpUI(){
+        scrollView.bounds = view.bounds
+        scrollView.isScrollEnabled = true
         view.addSubview(scrollView)
         view.backgroundColor = UIColor(named: "background_menu")
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height*2)
         setUpScrollUI()
     }
     
     private func setUpScrollUI(){
-        scrollView.contentSize = CGSize(width: .zero, height: view.frame.height*2)
         addPadSearch()
         addLocationAvatar()
         addSearchBar()
@@ -49,24 +57,8 @@ class MenuTabViewController: UIViewController {
     
     private func addPadSearch() {
         viewPad.backgroundColor = UIColor(named: "pad_search")
-        scrollView.showsVerticalScrollIndicator = true
+        viewPad.frame = CGRect(x: 0, y: 0, width: scrollView.frame.width, height: 280)
         scrollView.addSubview(viewPad)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-        configurationConstraint()
-    }
-    
-    private func configurationConstraint() {
-        viewPad.translatesAutoresizingMaskIntoConstraints = false
-        viewPad.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        viewPad.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        viewPad.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        viewPad.heightAnchor.constraint(equalToConstant: 280).isActive = true
-        viewPad.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
     }
 }
 

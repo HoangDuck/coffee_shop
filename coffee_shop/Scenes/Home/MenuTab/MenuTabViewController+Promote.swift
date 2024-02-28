@@ -11,14 +11,9 @@ extension MenuTabViewController {
     func addPromotionView(){
         let image = UIImage(named: "promote_ex")
         let imageView = UIImageView(image: image)
-        
+        imageView.frame = CGRect(x: 20, y: 200, width: scrollView.frame.width - 40, height: 140)
         scrollView.addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 140).isActive = true
-        imageView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 30).isActive = true
-        imageView.sizeToFit()
+        imageView.contentMode = .scaleAspectFill
     }
 }
 

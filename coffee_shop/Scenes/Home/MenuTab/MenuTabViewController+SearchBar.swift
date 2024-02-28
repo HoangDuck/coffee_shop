@@ -40,13 +40,7 @@ extension MenuTabViewController {
         
         //invisible show clear button
         searchBar.clearButtonMode = .never
+        searchBar.frame = CGRect(x: 20, y: 105, width: scrollView.frame.width - 40, height: 52)
         scrollView.addSubview(searchBar)
-    
-        //add search bar to view
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: 20).isActive = true
-        searchBar.topAnchor.constraint(equalTo: location.bottomAnchor, constant: 40).isActive = true
-        searchBar.heightAnchor.constraint(equalToConstant: 52).isActive = true
     }
 }

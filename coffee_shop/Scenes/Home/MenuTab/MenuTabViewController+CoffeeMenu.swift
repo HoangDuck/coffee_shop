@@ -43,16 +43,10 @@ extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func addMenuOptionCoffee() {
         let layout = UICollectionViewLayout()
-        coffeeOptionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        coffeeOptionView = UICollectionView(frame: CGRect(x: 0, y: 420, width: scrollView.frame.width, height: scrollView.frame.height), collectionViewLayout: layout)
         coffeeOptionView.register(ItemCoffeeView.self, forCellWithReuseIdentifier:  ItemCoffeeView.identifier)
+        coffeeOptionView.backgroundColor = .clear
         scrollView.addSubview(coffeeOptionView)
-        coffeeOptionView.backgroundColor = .red
-        coffeeOptionView.translatesAutoresizingMaskIntoConstraints = false
-        coffeeOptionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        coffeeOptionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        coffeeOptionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        coffeeOptionView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        
     }
     
    ///COFFEE CATEGORY MENU
@@ -67,12 +61,8 @@ extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDel
             index += 1
         }
         coffeeCategoryView.contentSize = CGSize(width: xPosition, height: 38)
+        coffeeCategoryView.frame = CGRect(x: 0, y: 370, width: scrollView.frame.width, height: 45)
         scrollView.addSubview(coffeeCategoryView)
-        coffeeCategoryView.translatesAutoresizingMaskIntoConstraints = false
-        coffeeCategoryView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        coffeeCategoryView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        coffeeCategoryView.topAnchor.constraint(equalTo: viewPad.bottomAnchor, constant: 70).isActive = true
-        coffeeCategoryView.heightAnchor.constraint(equalToConstant: 45).isActive = true
     }
     
     func selectedItemStyle(item: CoffeeCategory, xPosition: CGFloat) -> UILabel {

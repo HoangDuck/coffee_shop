@@ -48,10 +48,8 @@ extension MenuTabViewController {
     func addAvatar(){
         //avatar
         let avatarView = UIImageView(image: avatar)
+        avatarView.frame = CGRect(x: scrollView.frame.width - 60, y: 25, width: 40, height: 40)
         scrollView.addSubview(avatarView)
-        avatarView.translatesAutoresizingMaskIntoConstraints = false
-        avatarView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor,constant: -20).isActive = true
-        avatarView.firstBaselineAnchor.constraint(equalTo: locationTitle.topAnchor).isActive = true
     }
 }
 

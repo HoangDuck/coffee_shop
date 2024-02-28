@@ -14,9 +14,12 @@ extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCoffeeView.identifier, for: indexPath) as! ItemCoffeeView
+        cell.setupUI()
         let coffeeItem = coffees[indexPath.row]
         //image coffee
         cell.imageView = UIImageView(image: coffeeItem.imageMenu)
+        cell.imageView.frame.size = CGSize(width: 141, height: 132)
+        cell.imageView.contentMode = .scaleAspectFill
         //title coffee
         cell.titleCoffee.text = coffeeItem.title
         cell.titleCoffee.textColor = .black
@@ -42,11 +45,18 @@ extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func addMenuOptionCoffee() {
-        let layout = UICollectionViewLayout()
-        coffeeOptionView = UICollectionView(frame: CGRect(x: 0, y: 420, width: scrollView.frame.width, height: scrollView.frame.height), collectionViewLayout: layout)
-        coffeeOptionView.register(ItemCoffeeView.self, forCellWithReuseIdentifier:  ItemCoffeeView.identifier)
-        coffeeOptionView.backgroundColor = .clear
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 165, height: 240)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        layout.minimumLineSpacing = 20
+        
+        let coffeeOptionView = UICollectionView(frame: CGRect(x: 0, y: 420, width: scrollView.frame.width, height: scrollView.frame.height), collectionViewLayout: layout)
         scrollView.addSubview(coffeeOptionView)
+        coffeeOptionView.backgroundColor = .clear
+        coffeeOptionView.dataSource = self
+        coffeeOptionView.delegate = self
+        coffeeOptionView.register(ItemCoffeeView.self, forCellWithReuseIdentifier:  ItemCoffeeView.identifier)
     }
     
    ///COFFEE CATEGORY MENU

@@ -24,7 +24,7 @@ class MenuTabViewController: UIViewController {
     //views horizontal list view
     let coffeeCategoryView: UIScrollView = UIScrollView()
     //views menu coffees
-    var coffeeOptionView: UICollectionView!
+    //var coffeeOptionView: UICollectionView!
     let coffees: [CoffeeMenu] = CoffeeMenu.mockMenu
     
     override func viewDidLoad() {
@@ -37,13 +37,13 @@ class MenuTabViewController: UIViewController {
         scrollView.isScrollEnabled = true
         view.addSubview(scrollView)
         view.backgroundColor = UIColor(named: "background_menu")
-        scrollView.showsVerticalScrollIndicator = true
+        scrollView.showsVerticalScrollIndicator = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height*2)
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height*1.15)
         setUpScrollUI()
     }
     

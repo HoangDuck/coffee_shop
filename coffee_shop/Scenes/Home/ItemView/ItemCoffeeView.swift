@@ -17,27 +17,17 @@ class ItemCoffeeView: UICollectionViewCell {
     var priceCoffee = UILabel()
     var rateCoffee = UILabel()
     
-    init() {
-        super.init(frame: .zero)
-        setupUI()
-    }
-    
     func setupUI() {
         backgroundColor = .white
         layer.masksToBounds = true
         layer.cornerRadius = 10
         //add image view coffee
         addSubview(imageView)
-        
-        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(starView)
         addSubview(titleCoffee)
         addSubview(descriptionCoffee)
         addSubview(priceCoffee)
         addSubview(rateCoffee)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError()
     }
 }

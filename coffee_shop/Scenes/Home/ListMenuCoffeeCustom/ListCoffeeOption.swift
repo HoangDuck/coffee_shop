@@ -12,7 +12,6 @@ class ListCoffeeOption: UICollectionView, UICollectionViewDataSource, UICollecti
     var coffees: [CoffeeMenu] = []
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("=======\(coffees.count)========")
         return coffees.count
     }
     
@@ -26,7 +25,7 @@ class ListCoffeeOption: UICollectionView, UICollectionViewDataSource, UICollecti
         cell.titleCoffee.textColor = .black
         cell.titleCoffee.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         //description coffee
-        cell.descriptionCoffee.text = coffeeItem.description
+        cell.descriptionCoffee.text = coffeeItem.notes
         cell.descriptionCoffee.textColor = UIColor(named: "description_coffee")
         cell.descriptionCoffee.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         //price coffee

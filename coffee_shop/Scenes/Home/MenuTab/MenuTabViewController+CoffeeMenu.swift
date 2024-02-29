@@ -26,7 +26,7 @@ extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDel
         cell.titleCoffee.textColor = .black
         cell.titleCoffee.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         //description coffee
-        cell.descriptionCoffee.text = coffeeItem.description
+        cell.descriptionCoffee.text = coffeeItem.notes
         cell.descriptionCoffee.textColor = UIColor(named: "description_coffee")
         cell.descriptionCoffee.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         //price coffee
@@ -40,6 +40,11 @@ extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDel
         
         cell.setupUI()
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = DetailViewController(coffee: coffees[indexPath.row])
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func addMenuCoffee() {

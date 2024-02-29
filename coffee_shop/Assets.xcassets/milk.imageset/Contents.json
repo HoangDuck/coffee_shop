@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "rating_star.png",
+      "filename" : "milk.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "star.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

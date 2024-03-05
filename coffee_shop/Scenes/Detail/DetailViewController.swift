@@ -53,7 +53,9 @@ class DetailViewController: UIViewController {
         contentView.addSubview(detailStackView)
         detailStackView.addArrangedSubview(addBarDetail())
         addCoffeeTitle()
+        addRatingCoffee()
         divider()
+        addDescriptionCoffee()
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true

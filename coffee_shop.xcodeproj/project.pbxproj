@@ -30,6 +30,9 @@
 		C0C4CE0D2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE0C2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift */; };
 		C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE0E2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift */; };
 		C0C4CE112B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */; };
+		C0E934272B96D4B400C544D7 /* DetailViewController+Ratings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E934262B96D4B400C544D7 /* DetailViewController+Ratings.swift */; };
+		C0E934292B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */; };
+		C0E9342B2B97076D00C544D7 /* DetailViewController+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */; };
 		C0F5D2892B8C341A006EB2D1 /* CoffeeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D2882B8C341A006EB2D1 /* CoffeeCategory.swift */; };
 		C0F5D28B2B8C34E5006EB2D1 /* CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */; };
 		C0F5D28E2B8C6BF4006EB2D1 /* ItemCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */; };
@@ -81,6 +84,9 @@
 		C0C4CE0C2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+Location+Avatar.swift"; sourceTree = "<group>"; };
 		C0C4CE0E2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+Promote.swift"; sourceTree = "<group>"; };
 		C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+CoffeeMenu.swift"; sourceTree = "<group>"; };
+		C0E934262B96D4B400C544D7 /* DetailViewController+Ratings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Ratings.swift"; sourceTree = "<group>"; };
+		C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+DescriptionCoffee.swift"; sourceTree = "<group>"; };
+		C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Size.swift"; sourceTree = "<group>"; };
 		C0F5D2882B8C341A006EB2D1 /* CoffeeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCategory.swift; sourceTree = "<group>"; };
 		C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMenu.swift; sourceTree = "<group>"; };
 		C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCoffeeView.swift; sourceTree = "<group>"; };
@@ -220,6 +226,9 @@
 				C0B95B4A2B9569F600DDB471 /* DetailViewController+Price.swift */,
 				C0B95B4C2B95BF1400DDB471 /* DetailViewController+Coffee.swift */,
 				C0B95B4E2B95CAA200DDB471 /* DetailViewController+Divider.swift */,
+				C0E934262B96D4B400C544D7 /* DetailViewController+Ratings.swift */,
+				C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */,
+				C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -421,9 +430,12 @@
 				335580492B7F619D00974CF7 /* DeliveryViewController.swift in Sources */,
 				C0B95B4D2B95BF1400DDB471 /* DetailViewController+Coffee.swift in Sources */,
 				335580092B7F5E2F00974CF7 /* AppDelegate.swift in Sources */,
+				C0E934272B96D4B400C544D7 /* DetailViewController+Ratings.swift in Sources */,
 				C0B95B4B2B9569F600DDB471 /* DetailViewController+Price.swift in Sources */,
 				338F05802B833FF700123EA3 /* MenuTabViewController.swift in Sources */,
 				335580472B7F619000974CF7 /* OrderViewController.swift in Sources */,
+				C0E934292B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift in Sources */,
+				C0E9342B2B97076D00C544D7 /* DetailViewController+Size.swift in Sources */,
 				C0F5D2892B8C341A006EB2D1 /* CoffeeCategory.swift in Sources */,
 				335580452B7F618300974CF7 /* DetailViewController.swift in Sources */,
 				335580412B7F614A00974CF7 /* OnboardViewController.swift in Sources */,

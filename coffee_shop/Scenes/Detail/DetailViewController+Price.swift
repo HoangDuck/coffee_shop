@@ -57,5 +57,11 @@ extension DetailViewController {
         buttonBuyNow.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
         buttonBuyNow.heightAnchor.constraint(equalToConstant: 62).isActive = true
         buttonBuyNow.widthAnchor.constraint(equalToConstant: 217).isActive = true
+        buttonBuyNow.addTarget(self, action: #selector(buyNowTap(_ :)), for: .touchUpInside)
+    }
+    
+    @objc func buyNowTap(_ sender: UIButton) {
+        let vc = OrderViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

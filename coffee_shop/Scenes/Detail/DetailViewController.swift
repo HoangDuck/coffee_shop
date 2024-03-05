@@ -56,6 +56,7 @@ class DetailViewController: UIViewController {
         addRatingCoffee()
         divider()
         addDescriptionCoffee()
+        addSizeChoose()
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true

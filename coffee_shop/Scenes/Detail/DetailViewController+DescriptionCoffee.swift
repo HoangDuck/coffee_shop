@@ -32,10 +32,9 @@ extension DetailViewController {
         descriptionCoffee.addSubview(descriptionDetail)
         descriptionDetail.leadingAnchor.constraint(equalTo: descriptionCoffee.leadingAnchor, constant: 30).isActive = true
         descriptionDetail.trailingAnchor.constraint(equalTo: descriptionCoffee.trailingAnchor, constant: -30).isActive = true
-        descriptionDetail.topAnchor.constraint(equalTo: descriptionCoffee.bottomAnchor, constant: 10).isActive = true
-        let height = title.frame.height + descriptionDetail.frame.height + CGFloat(20.0)
-        descriptionCoffee.heightAnchor.constraint(equalToConstant: height).isActive = true
+        descriptionDetail.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10).isActive = true
+        //height of description coffee
+        descriptionCoffee.heightAnchor.constraint(equalToConstant: 80).isActive = true
         detailStackView.addArrangedSubview(descriptionCoffee)
-        
     }
 }

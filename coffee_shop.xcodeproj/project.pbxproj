@@ -30,6 +30,9 @@
 		C0C4CE0D2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE0C2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift */; };
 		C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE0E2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift */; };
 		C0C4CE112B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */; };
+		C0D90CAB2B98183A000238B5 /* OrderViewController+OrderDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D90CAA2B98183A000238B5 /* OrderViewController+OrderDelivery.swift */; };
+		C0D90CAD2B98732F000238B5 /* OrderViewController+Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D90CAC2B98732F000238B5 /* OrderViewController+Address.swift */; };
+		C0D90CAF2B988069000238B5 /* OrderViewController+CoffeeNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D90CAE2B988069000238B5 /* OrderViewController+CoffeeNumber.swift */; };
 		C0E934272B96D4B400C544D7 /* DetailViewController+Ratings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E934262B96D4B400C544D7 /* DetailViewController+Ratings.swift */; };
 		C0E934292B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */; };
 		C0E9342B2B97076D00C544D7 /* DetailViewController+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */; };
@@ -84,6 +87,9 @@
 		C0C4CE0C2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+Location+Avatar.swift"; sourceTree = "<group>"; };
 		C0C4CE0E2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+Promote.swift"; sourceTree = "<group>"; };
 		C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuTabViewController+CoffeeMenu.swift"; sourceTree = "<group>"; };
+		C0D90CAA2B98183A000238B5 /* OrderViewController+OrderDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+OrderDelivery.swift"; sourceTree = "<group>"; };
+		C0D90CAC2B98732F000238B5 /* OrderViewController+Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+Address.swift"; sourceTree = "<group>"; };
+		C0D90CAE2B988069000238B5 /* OrderViewController+CoffeeNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+CoffeeNumber.swift"; sourceTree = "<group>"; };
 		C0E934262B96D4B400C544D7 /* DetailViewController+Ratings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Ratings.swift"; sourceTree = "<group>"; };
 		C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+DescriptionCoffee.swift"; sourceTree = "<group>"; };
 		C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Size.swift"; sourceTree = "<group>"; };
@@ -237,6 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				335580462B7F619000974CF7 /* OrderViewController.swift */,
+				C0D90CAA2B98183A000238B5 /* OrderViewController+OrderDelivery.swift */,
+				C0D90CAC2B98732F000238B5 /* OrderViewController+Address.swift */,
+				C0D90CAE2B988069000238B5 /* OrderViewController+CoffeeNumber.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -418,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D90CAB2B98183A000238B5 /* OrderViewController+OrderDelivery.swift in Sources */,
 				C0C4CE112B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift in Sources */,
 				C0B95B4F2B95CAA200DDB471 /* DetailViewController+Divider.swift in Sources */,
 				C0F5D28E2B8C6BF4006EB2D1 /* ItemCoffeeView.swift in Sources */,
@@ -429,12 +439,14 @@
 				C0F5D2912B8CA0AC006EB2D1 /* ListCoffeeOption.swift in Sources */,
 				335580492B7F619D00974CF7 /* DeliveryViewController.swift in Sources */,
 				C0B95B4D2B95BF1400DDB471 /* DetailViewController+Coffee.swift in Sources */,
+				C0D90CAF2B988069000238B5 /* OrderViewController+CoffeeNumber.swift in Sources */,
 				335580092B7F5E2F00974CF7 /* AppDelegate.swift in Sources */,
 				C0E934272B96D4B400C544D7 /* DetailViewController+Ratings.swift in Sources */,
 				C0B95B4B2B9569F600DDB471 /* DetailViewController+Price.swift in Sources */,
 				338F05802B833FF700123EA3 /* MenuTabViewController.swift in Sources */,
 				335580472B7F619000974CF7 /* OrderViewController.swift in Sources */,
 				C0E934292B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift in Sources */,
+				C0D90CAD2B98732F000238B5 /* OrderViewController+Address.swift in Sources */,
 				C0E9342B2B97076D00C544D7 /* DetailViewController+Size.swift in Sources */,
 				C0F5D2892B8C341A006EB2D1 /* CoffeeCategory.swift in Sources */,
 				335580452B7F618300974CF7 /* DetailViewController.swift in Sources */,

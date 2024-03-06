@@ -61,7 +61,7 @@ extension DetailViewController {
     }
     
     @objc func buyNowTap(_ sender: UIButton) {
-        let vc = OrderViewController()
+        let vc = OrderViewController(coffee: coffee)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

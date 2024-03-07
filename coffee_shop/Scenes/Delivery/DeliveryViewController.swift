@@ -8,76 +8,44 @@
 import UIKit
 
 class DeliveryViewController: UIViewController {
-    lazy var scrollView: UIScrollView = {
-            let scrollView = UIScrollView()
-            scrollView.translatesAutoresizingMaskIntoConstraints = false
-            return scrollView
-        }()
-
-        lazy var stackView: UIStackView = {
-            let stackView = UIStackView()
-            stackView.axis = .vertical
-            stackView.distribution = UIStackView.Distribution.equalSpacing
-            stackView.spacing = 30
-            stackView.translatesAutoresizingMaskIntoConstraints = false
-            return stackView
-        }()
-    
-    lazy var contentView: UIView = {
-            let view = UIView()
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
-    
-    var titleLabel: UILabel {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "UIStackView inside UIScrollView."
-        label.font = UIFont.systemFont(ofSize: 24, weight: .medium)
-        label.textColor = .white
-        label.textAlignment = .center
-        return label
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-        setupLayout()
-        
-        
+        view.backgroundColor = UIColor(named: "background_menu")
+        addButtonNavigator()
     }
     
-    private func setupViews() {
-        scrollView.backgroundColor = .lightGray
-
-        view.addSubview(scrollView)
-                
-                scrollView.addSubview(contentView)
-                
-                contentView.addSubview(stackView)
-//        for _ in 0...20 {
-//            stackView.addArrangedSubview(titleLabel)
-//        }
-    }
+    func addButtonNavigator(){
+        //navigator back button
+        let backButton = UIButton()
+        backButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        backButton.imageView?.tintColor = .black
+        backButton.backgroundColor = .white
+        backButton.layer.masksToBounds = true
+        backButton.layer.cornerRadius = 18
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.addTarget(self, action: #selector(navigatorBack(_ :)), for: .touchUpInside)
+        view.addSubview(backButton)
+        backButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        backButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
+        backButton.topAnchor.constraint(equalTo: self.view.topAnchor,constant: 60).isActive = true
         
-    private func setupLayout() {
-        scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-                
-        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-                
-                // because: "Constraints between the height, width, or centers attach to the scroll view’s frame." -
-                // https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/WorkingwithScrollViews.html
-        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-                
-        stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        }
+        //gps button
+        let gpsButton = UIButton()
+        gpsButton.setImage(UIImage(named: "gps"), for: .normal)
+        gpsButton.imageView?.tintColor = .black
+        gpsButton.backgroundColor = .white
+        gpsButton.layer.masksToBounds = true
+        gpsButton.layer.cornerRadius = 18
+        gpsButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(gpsButton)
+        gpsButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        gpsButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        gpsButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30).isActive = true
+        gpsButton.topAnchor.constraint(equalTo: self.view.topAnchor,constant: 60).isActive = true
+    }
+    
+    @objc private func navigatorBack(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }

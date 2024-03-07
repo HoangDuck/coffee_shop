@@ -59,9 +59,10 @@ class OrderViewController: UIViewController {
         addAddressBar()
         addEditAddress()
         divider()
+        addCoffeeNumber()
         boldDivider()
-//        addDescriptionCoffee()
-//        addSizeChoose()
+        addDiscountApplied()
+        addTotalPayment()
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true

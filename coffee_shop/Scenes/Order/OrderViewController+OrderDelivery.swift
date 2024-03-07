@@ -84,7 +84,7 @@ extension OrderViewController {
         cashTitle.widthAnchor.constraint(equalToConstant: 51).isActive = true
         //price title
         let priceTitle = UILabel()
-        priceTitle.text = "$ \(calculatePriceTotal())"
+        priceTitle.text = "$ \(String(format: "%.2f",calculatePriceTotal()))"
         priceTitle.textAlignment = .center
         priceTitle.textColor = .black
         priceTitle.font = UIFont.systemFont(ofSize: 12, weight: .regular)
@@ -92,11 +92,11 @@ extension OrderViewController {
         cashItemCard.addSubview(priceTitle)
         priceTitle.topAnchor.constraint(equalTo: cashItemCard.topAnchor, constant: 5).isActive = true
         priceTitle.bottomAnchor.constraint(equalTo: cashItemCard.bottomAnchor, constant: -5).isActive = true
-        priceTitle.trailingAnchor.constraint(equalTo: cashItemCard.trailingAnchor, constant: -25).isActive = true
+        priceTitle.trailingAnchor.constraint(equalTo: cashItemCard.trailingAnchor, constant: -20).isActive = true
     }
     
     @objc func orderNowTap(_ sender: UIButton) {
-        let vc = UIViewController()
+        let vc = DeliveryViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

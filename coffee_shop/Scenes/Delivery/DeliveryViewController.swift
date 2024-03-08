@@ -12,6 +12,19 @@ class DeliveryViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "background_menu")
         addButtonNavigator()
+        showSheetBottom()
+    }
+    
+    func showSheetBottom(){
+        let vc = DeliveryTrackingViewController()
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        present(vc, animated: false,completion: nil)
     }
     
     func addButtonNavigator(){

@@ -96,6 +96,7 @@
 		C0D90CAA2B98183A000238B5 /* OrderViewController+OrderDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+OrderDelivery.swift"; sourceTree = "<group>"; };
 		C0D90CAC2B98732F000238B5 /* OrderViewController+Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+Address.swift"; sourceTree = "<group>"; };
 		C0D90CAE2B988069000238B5 /* OrderViewController+CoffeeNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+CoffeeNumber.swift"; sourceTree = "<group>"; };
+		C0D98BF02B9EB3E10094EDBE /* coffee_shop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = coffee_shop.entitlements; sourceTree = "<group>"; };
 		C0E934262B96D4B400C544D7 /* DetailViewController+Ratings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Ratings.swift"; sourceTree = "<group>"; };
 		C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+DescriptionCoffee.swift"; sourceTree = "<group>"; };
 		C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Size.swift"; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 		335580072B7F5E2F00974CF7 /* coffee_shop */ = {
 			isa = PBXGroup;
 			children = (
+				C0D98BF02B9EB3E10094EDBE /* coffee_shop.entitlements */,
 				335580382B7F5F5F00974CF7 /* Application */,
 				335580112B7F5E3000974CF7 /* Assets.xcassets */,
 				335580162B7F5E3000974CF7 /* Info.plist */,
@@ -644,6 +646,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = coffee_shop/coffee_shop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JP4GTGBCRS;
@@ -672,6 +675,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = coffee_shop/coffee_shop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JP4GTGBCRS;

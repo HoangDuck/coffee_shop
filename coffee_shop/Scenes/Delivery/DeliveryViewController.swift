@@ -6,19 +6,42 @@
 //
 
 import UIKit
+import MapKit
 
 class DeliveryViewController: UIViewController {
+    let mapView: MKMapView = MKMapView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "background_menu")
+        setupMapView()
         addButtonNavigator()
         showSheetBottom()
     }
     
+    private func setupMapView(){
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.backgroundColor = UIColor(named: "background_menu")
+        mapView.showsUserLocation = true
+        mapView.isRotateEnabled = false
+        mapView.showsUserTrackingButton = true
+        mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 10.80301730658949, longitude: 106.62934146213482), span: MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.006)), animated: true)
+        self.view.addSubview(mapView)
+        NSLayoutConstraint.activate([
+            mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+        ])
+    }
+    
     func showSheetBottom(){
+        let heightSheet = self.view.frame.height / 3
         let vc = DeliveryTrackingViewController()
         if let sheet = vc.sheetPresentationController {
-            sheet.detents = [.medium()]
+            sheet.detents = [.custom {
+                context in
+                CGFloat(heightSheet)
+            },.large()]
             sheet.largestUndimmedDetentIdentifier = .medium
             sheet.prefersScrollingExpandsWhenScrolledToEdge = false
             sheet.prefersEdgeAttachedInCompactHeight = true

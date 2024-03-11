@@ -23,7 +23,7 @@ class DeliveryTrackingViewController: UIViewController {
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.alignment = .center
-        stackView.spacing = 20
+        stackView.spacing = 10
         stackView.backgroundColor = .white
         stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)

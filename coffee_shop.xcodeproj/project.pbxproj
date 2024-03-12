@@ -33,6 +33,9 @@
 		C0D1B2082B996DF70085AD51 /* OrderViewController+Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1B2072B996DF70085AD51 /* OrderViewController+Discount.swift */; };
 		C0D1B20A2B9973350085AD51 /* OrderViewController+TotalPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1B2092B9973350085AD51 /* OrderViewController+TotalPayment.swift */; };
 		C0D1B20C2B99BC850085AD51 /* DeliveryTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1B20B2B99BC850085AD51 /* DeliveryTrackingViewController.swift */; };
+		C0D8E1322BA00F85004CC8D2 /* ShipperAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8E1312BA00F85004CC8D2 /* ShipperAnnotation.swift */; };
+		C0D8E1352BA0156C004CC8D2 /* AnnotationUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8E1342BA0156C004CC8D2 /* AnnotationUserView.swift */; };
+		C0D8E1372BA01694004CC8D2 /* AnnotationShipperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8E1362BA01694004CC8D2 /* AnnotationShipperView.swift */; };
 		C0D90CAB2B98183A000238B5 /* OrderViewController+OrderDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D90CAA2B98183A000238B5 /* OrderViewController+OrderDelivery.swift */; };
 		C0D90CAD2B98732F000238B5 /* OrderViewController+Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D90CAC2B98732F000238B5 /* OrderViewController+Address.swift */; };
 		C0D90CAF2B988069000238B5 /* OrderViewController+CoffeeNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D90CAE2B988069000238B5 /* OrderViewController+CoffeeNumber.swift */; };
@@ -93,6 +96,9 @@
 		C0D1B2072B996DF70085AD51 /* OrderViewController+Discount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+Discount.swift"; sourceTree = "<group>"; };
 		C0D1B2092B9973350085AD51 /* OrderViewController+TotalPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+TotalPayment.swift"; sourceTree = "<group>"; };
 		C0D1B20B2B99BC850085AD51 /* DeliveryTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTrackingViewController.swift; sourceTree = "<group>"; };
+		C0D8E1312BA00F85004CC8D2 /* ShipperAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipperAnnotation.swift; sourceTree = "<group>"; };
+		C0D8E1342BA0156C004CC8D2 /* AnnotationUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationUserView.swift; sourceTree = "<group>"; };
+		C0D8E1362BA01694004CC8D2 /* AnnotationShipperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationShipperView.swift; sourceTree = "<group>"; };
 		C0D90CAA2B98183A000238B5 /* OrderViewController+OrderDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+OrderDelivery.swift"; sourceTree = "<group>"; };
 		C0D90CAC2B98732F000238B5 /* OrderViewController+Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+Address.swift"; sourceTree = "<group>"; };
 		C0D90CAE2B988069000238B5 /* OrderViewController+CoffeeNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+CoffeeNumber.swift"; sourceTree = "<group>"; };
@@ -263,6 +269,8 @@
 		3355803F2B7F60E300974CF7 /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				C0D8E1332BA0155B004CC8D2 /* AnnotaionsView */,
+				C0D8E12E2BA00F5F004CC8D2 /* Annotations */,
 				335580482B7F619D00974CF7 /* DeliveryViewController.swift */,
 				C0D1B20B2B99BC850085AD51 /* DeliveryTrackingViewController.swift */,
 			);
@@ -279,6 +287,23 @@
 				C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */,
 			);
 			path = MenuTab;
+			sourceTree = "<group>";
+		};
+		C0D8E12E2BA00F5F004CC8D2 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				C0D8E1312BA00F85004CC8D2 /* ShipperAnnotation.swift */,
+			);
+			path = Annotations;
+			sourceTree = "<group>";
+		};
+		C0D8E1332BA0155B004CC8D2 /* AnnotaionsView */ = {
+			isa = PBXGroup;
+			children = (
+				C0D8E1342BA0156C004CC8D2 /* AnnotationUserView.swift */,
+				C0D8E1362BA01694004CC8D2 /* AnnotationShipperView.swift */,
+			);
+			path = AnnotaionsView;
 			sourceTree = "<group>";
 		};
 		C0F5D2872B8C3409006EB2D1 /* Model */ = {
@@ -442,8 +467,10 @@
 				C0C4CE112B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift in Sources */,
 				C0B95B4F2B95CAA200DDB471 /* DetailViewController+Divider.swift in Sources */,
 				C0F5D28E2B8C6BF4006EB2D1 /* ItemCoffeeView.swift in Sources */,
+				C0D8E1352BA0156C004CC8D2 /* AnnotationUserView.swift in Sources */,
 				C0C4CE0D2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift in Sources */,
 				C0F5D28B2B8C34E5006EB2D1 /* CoffeeMenu.swift in Sources */,
+				C0D8E1372BA01694004CC8D2 /* AnnotationShipperView.swift in Sources */,
 				335580432B7F616400974CF7 /* HomeViewController.swift in Sources */,
 				C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */,
 				3355800D2B7F5E2F00974CF7 /* ViewController.swift in Sources */,
@@ -451,6 +478,7 @@
 				335580492B7F619D00974CF7 /* DeliveryViewController.swift in Sources */,
 				C0B95B4D2B95BF1400DDB471 /* DetailViewController+Coffee.swift in Sources */,
 				C0D90CAF2B988069000238B5 /* OrderViewController+CoffeeNumber.swift in Sources */,
+				C0D8E1322BA00F85004CC8D2 /* ShipperAnnotation.swift in Sources */,
 				335580092B7F5E2F00974CF7 /* AppDelegate.swift in Sources */,
 				C0E934272B96D4B400C544D7 /* DetailViewController+Ratings.swift in Sources */,
 				C0B95B4B2B9569F600DDB471 /* DetailViewController+Price.swift in Sources */,

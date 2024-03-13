@@ -8,8 +8,10 @@
 import UIKit
 import MapKit
 
-class DeliveryViewController: UIViewController,MKMapViewDelegate {
+class DeliveryViewController: UIViewController {
     let mapView: MKMapView = MKMapView()
+    
+    private var allAnnotations: [MKAnnotation] = []
     
     private var displayedAnnotations: [MKAnnotation]? {
         willSet {
@@ -27,13 +29,6 @@ class DeliveryViewController: UIViewController,MKMapViewDelegate {
         }
     }
     
-    private func setRegionUser(){
-        guard let firstAnnotation = displayedAnnotations?.first else {
-            fatalError("Can't determine location")
-        }
-        mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: firstAnnotation.coordinate.latitude, longitude: firstAnnotation.coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.006)), animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMapView()
@@ -41,42 +36,12 @@ class DeliveryViewController: UIViewController,MKMapViewDelegate {
         showSheetBottom()
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        var annotationViews: MKAnnotationView?
-        print("Set up view annotations")
-        if let annotation = annotation as? MKUserLocation {
-            annotationViews = setupViewForUserLocationAnnotations(for: annotation, on: mapView)
-        } else if let annotation = annotation as? ShipperAnnotation {
-            print("Set up view annotations shipper")
-            annotationViews = setupViewForShipperAnnotations(for: annotation, on: mapView)
-        }
-        return annotationViews
-    }
-    
-    private func setupViewForUserLocationAnnotations(for annotation: MKUserLocation, on mapView: MKMapView) -> MKAnnotationView {
-        let identifier = NSStringFromClass(MKUserLocation.self)
-        let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier, for: annotation)
-        return view
-    }
-    
-    private func setupViewForShipperAnnotations(for annotation: ShipperAnnotation, on mapView: MKMapView) -> MKAnnotationView {
-        return mapView.dequeueReusableAnnotationView(withIdentifier: NSStringFromClass(ShipperAnnotation.self), for: annotation)
-    }
-    
     private func registerAnnotations(){
-        mapView.register(AnnotationUserView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(MKUserLocation.self))
-        mapView.register(AnnotationShipperView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(ShipperAnnotation.self))
-    }
-    
-    private func addLocations(){
-        displayedAnnotations = [ShipperAnnotation(coordinate: CLLocationCoordinate2D(latitude: 10.801638955557912, longitude: 106.66260241728925))]
-        
+        mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(MKUserLocation.self))
+        mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(ShipperAnnotation.self))
     }
     
     private func setupMapView(){
-        mapView.delegate = self
-        registerAnnotations()
-        addLocations()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.backgroundColor = UIColor(named: "background_menu")
         mapView.isRotateEnabled = false
@@ -89,56 +54,50 @@ class DeliveryViewController: UIViewController,MKMapViewDelegate {
             mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
+        mapView.delegate = self
+        registerAnnotations()
+        addLocations()
     }
     
-    func showSheetBottom(){
-        let heightSheet = self.view.frame.height / 3
-        let vc = DeliveryTrackingViewController()
-        if let sheet = vc.sheetPresentationController {
-            sheet.detents = [.custom {
-                context in
-                CGFloat(heightSheet)
-            },.large()]
-            sheet.largestUndimmedDetentIdentifier = .medium
-            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-            sheet.prefersEdgeAttachedInCompactHeight = true
-            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+    private func setRegionUser(){
+        guard let firstAnnotation = displayedAnnotations?.first else {
+            fatalError("Can't determine location")
         }
-        present(vc, animated: false,completion: nil)
+        mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: firstAnnotation.coordinate.latitude, longitude: firstAnnotation.coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.006)), animated: true)
     }
     
-    func addButtonNavigator(){
-        //navigator back button
-        let backButton = UIButton()
-        backButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        backButton.imageView?.tintColor = .black
-        backButton.backgroundColor = .white
-        backButton.layer.masksToBounds = true
-        backButton.layer.cornerRadius = 18
-        backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.addTarget(self, action: #selector(navigatorBack(_ :)), for: .touchUpInside)
-        view.addSubview(backButton)
-        backButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        backButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        backButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
-        backButton.topAnchor.constraint(equalTo: self.view.topAnchor,constant: 60).isActive = true
-        
-        //gps button
-        let gpsButton = UIButton()
-        gpsButton.setImage(UIImage(named: "gps"), for: .normal)
-        gpsButton.imageView?.tintColor = .black
-        gpsButton.backgroundColor = .white
-        gpsButton.layer.masksToBounds = true
-        gpsButton.layer.cornerRadius = 18
-        gpsButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(gpsButton)
-        gpsButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        gpsButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        gpsButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30).isActive = true
-        gpsButton.topAnchor.constraint(equalTo: self.view.topAnchor,constant: 60).isActive = true
+    private func addLocations(){
+        allAnnotations = [ShipperAnnotation(coordinate: CLLocationCoordinate2D(latitude: 10.801638955557912, longitude: 106.66260241728925)), mapView.userLocation]
+        showLocations()
     }
     
-    @objc private func navigatorBack(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+    private func showLocations(){
+        displayedAnnotations = allAnnotations
+    }
+    
+    private func setupViewForUserLocationAnnotations(for annotation: MKUserLocation, on mapView: MKMapView) -> MKAnnotationView {
+        let identifier = NSStringFromClass(MKUserLocation.self)
+        let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier, for: annotation)
+        return view
+    }
+    
+    private func setupViewForShipperAnnotations(for annotation: ShipperAnnotation, on mapView: MKMapView) -> MKAnnotationView {
+        let identifier = NSStringFromClass(ShipperAnnotation.self)
+        let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier, for: annotation)
+        return view
+    }
+}
+
+extension DeliveryViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotationViews: MKAnnotationView?
+        print("Set up view annotations")
+        if let annotation = annotation as? MKUserLocation {
+            annotationViews = setupViewForUserLocationAnnotations(for: annotation, on: mapView)
+        } else if let annotation = annotation as? ShipperAnnotation {
+            print("Set up view annotations shipper")
+            annotationViews = setupViewForShipperAnnotations(for: annotation, on: mapView)
+        }
+        return annotationViews
     }
 }

@@ -15,5 +15,6 @@ class ShipperAnnotation: NSObject, MKAnnotation {
     
     init(coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
+        super.init()
     }
 }

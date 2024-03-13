@@ -16,13 +16,11 @@ class DeliveryViewController: UIViewController {
     private var displayedAnnotations: [MKAnnotation]? {
         willSet {
             if let currentAnnotations = displayedAnnotations {
-                print("Remove annotations \(currentAnnotations)")
                 mapView.removeAnnotations(currentAnnotations)
             }
         }
         didSet {
             if let newAnnotations = displayedAnnotations {
-                print("Add annotations \(newAnnotations)")
                 mapView.addAnnotations(newAnnotations)
             }
             setRegionUser()
@@ -37,8 +35,8 @@ class DeliveryViewController: UIViewController {
     }
     
     private func registerAnnotations(){
-        mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(MKUserLocation.self))
-        mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(ShipperAnnotation.self))
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(UserLocationAnnotation.self))
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(ShipperAnnotation.self))
     }
     
     private func setupMapView(){
@@ -63,11 +61,11 @@ class DeliveryViewController: UIViewController {
         guard let firstAnnotation = displayedAnnotations?.first else {
             fatalError("Can't determine location")
         }
-        mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: firstAnnotation.coordinate.latitude, longitude: firstAnnotation.coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.006)), animated: true)
+        mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: firstAnnotation.coordinate.latitude, longitude: firstAnnotation.coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
     }
     
     private func addLocations(){
-        allAnnotations = [ShipperAnnotation(coordinate: CLLocationCoordinate2D(latitude: 10.801638955557912, longitude: 106.66260241728925)), mapView.userLocation]
+        allAnnotations = [ShipperAnnotation(coordinate: CLLocationCoordinate2D(latitude: 10.801638955557912, longitude: 106.66260241728925)), UserLocationAnnotation(coordinate: CLLocationCoordinate2D(latitude: 10.805893914232984, longitude: 106.66647121647723))]
         showLocations()
     }
     
@@ -75,8 +73,8 @@ class DeliveryViewController: UIViewController {
         displayedAnnotations = allAnnotations
     }
     
-    private func setupViewForUserLocationAnnotations(for annotation: MKUserLocation, on mapView: MKMapView) -> MKAnnotationView {
-        let identifier = NSStringFromClass(MKUserLocation.self)
+    private func setupViewForUserLocationAnnotations(for annotation: UserLocationAnnotation, on mapView: MKMapView) -> MKAnnotationView {
+        let identifier = NSStringFromClass(UserLocationAnnotation.self)
         let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier, for: annotation)
         return view
     }
@@ -92,7 +90,8 @@ extension DeliveryViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var annotationViews: MKAnnotationView?
         print("Set up view annotations")
-        if let annotation = annotation as? MKUserLocation {
+        if let annotation = annotation as? UserLocationAnnotation {
+            print("Set up view annotations MKUserLocation")
             annotationViews = setupViewForUserLocationAnnotations(for: annotation, on: mapView)
         } else if let annotation = annotation as? ShipperAnnotation {
             print("Set up view annotations shipper")

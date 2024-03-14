@@ -47,6 +47,7 @@ extension DeliveryViewController {
         gpsButton.backgroundColor = .white
         gpsButton.layer.masksToBounds = true
         gpsButton.layer.cornerRadius = 18
+        gpsButton.addTarget(self, action: #selector(navigateToUserLocation(_ :)), for: .touchUpInside)
         gpsButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gpsButton)
         gpsButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
@@ -57,5 +58,9 @@ extension DeliveryViewController {
     
     @objc private func navigatorBack(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func navigateToUserLocation(_ sender: UIButton) {
+        setRegionUser()
     }
 }

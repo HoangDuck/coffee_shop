@@ -120,7 +120,7 @@ extension DeliveryViewController: MKMapViewDelegate {
         return annotationViews
     }
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        <#code#>
-    }
+//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+//        
+//    }
 }

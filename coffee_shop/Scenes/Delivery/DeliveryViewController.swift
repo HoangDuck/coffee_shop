@@ -11,6 +11,8 @@ import MapKit
 class DeliveryViewController: UIViewController {
     let mapView: MKMapView = MKMapView()
     
+    private var currentLocation: CLLocationCoordinate2D?
+    
     private var allAnnotations: [MKAnnotation] = []
     
     private var locationManager: LocationDataManager?
@@ -68,9 +70,26 @@ class DeliveryViewController: UIViewController {
         mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
     }
     
+    private func drawPathOverlay(){
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: currentLocation ?? CLLocationCoordinate2D(latitude: 37.790846568432094, longitude: -122.42046253995784)))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: displayedAnnotations![0].coordinate))
+        request.transportType = .any
+        let serviceGetData = MKDirections(request: request)
+        serviceGetData.calculate(completionHandler: {
+            response, error in
+            if error == nil {
+                print("Add overlay")
+                let overlayPathMap = response!.routes[0].polyline
+                self.mapView.addOverlay(overlayPathMap ,level: .aboveRoads)
+            } else {
+                print("Error overlay \(String(describing: error))")
+            }
+        })
+    }
+    
     private func addLocations(){
         allAnnotations = [ShipperAnnotation(coordinate: CLLocationCoordinate2D(latitude: 37.78686137506034, longitude: -122.39838467635273))]
-        //37.78686137506034, -122.39838467635273
         showLocations()
     }
     
@@ -101,7 +120,8 @@ class DeliveryViewController: UIViewController {
 extension DeliveryViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        print(userLocation.coordinate)
+        currentLocation = userLocation.coordinate
+        drawPathOverlay()
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -120,7 +140,13 @@ extension DeliveryViewController: MKMapViewDelegate {
         return annotationViews
     }
     
-//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-//        
-//    }
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if let overlayLine = overlay as? MKPolyline {
+            let overlayRender = MKPolylineRenderer(overlay: overlayLine)
+            overlayRender.lineWidth = 4
+            overlayRender.strokeColor = UIColor(named: "button_color")
+            return overlayRender
+        }
+        return MKOverlayRenderer(overlay: overlay)
+    }
 }

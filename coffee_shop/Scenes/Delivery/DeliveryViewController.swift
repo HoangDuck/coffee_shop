@@ -44,9 +44,8 @@ class DeliveryViewController: UIViewController {
     }
     
     private func registerAnnotations(){
-        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(UserLocationAnnotation.self))
-        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(ShipperAnnotation.self))
-        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(MKUserLocation.self))
+        mapView.register(AnnotationShipperView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(ShipperAnnotation.self))
+        mapView.register(AnnotationUserView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(MKUserLocation.self))
     }
     
     private func setupMapView(){
@@ -104,12 +103,6 @@ class DeliveryViewController: UIViewController {
         return view
     }
     
-    private func setupViewForUserLocationAnnotations(for annotation: UserLocationAnnotation, on mapView: MKMapView) -> MKAnnotationView {
-        let identifier = NSStringFromClass(UserLocationAnnotation.self)
-        let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier, for: annotation)
-        return view
-    }
-    
     private func setupViewForShipperAnnotations(for annotation: ShipperAnnotation, on mapView: MKMapView) -> MKAnnotationView {
         let identifier = NSStringFromClass(ShipperAnnotation.self)
         let view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier, for: annotation)
@@ -127,10 +120,7 @@ extension DeliveryViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var annotationViews: MKAnnotationView?
         print("Set up view annotations")
-        if let annotation = annotation as? UserLocationAnnotation {
-            print("Set up view annotations MKUserLocation")
-            annotationViews = setupViewForUserLocationAnnotations(for: annotation, on: mapView)
-        } else if let annotation = annotation as? ShipperAnnotation {
+        if let annotation = annotation as? ShipperAnnotation {
             print("Set up view annotations shipper")
             annotationViews = setupViewForShipperAnnotations(for: annotation, on: mapView)
         } else if let annotation = annotation as? MKUserLocation {

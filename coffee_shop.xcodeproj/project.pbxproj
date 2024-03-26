@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		335580092B7F5E2F00974CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335580082B7F5E2F00974CF7 /* AppDelegate.swift */; };
 		3355800B2B7F5E2F00974CF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355800A2B7F5E2F00974CF7 /* SceneDelegate.swift */; };
-		3355800D2B7F5E2F00974CF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3355800C2B7F5E2F00974CF7 /* ViewController.swift */; };
 		335580102B7F5E2F00974CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3355800E2B7F5E2F00974CF7 /* Main.storyboard */; };
 		335580122B7F5E3000974CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335580112B7F5E3000974CF7 /* Assets.xcassets */; };
 		335580152B7F5E3000974CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335580132B7F5E3000974CF7 /* LaunchScreen.storyboard */; };
@@ -49,6 +48,7 @@
 		C0F5D28B2B8C34E5006EB2D1 /* CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */; };
 		C0F5D28E2B8C6BF4006EB2D1 /* ItemCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */; };
 		C0F5D2912B8CA0AC006EB2D1 /* ListCoffeeOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D2902B8CA0AC006EB2D1 /* ListCoffeeOption.swift */; };
+		C0FEE2072BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE2062BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,6 @@
 		335580052B7F5E2F00974CF7 /* coffee_shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffee_shop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		335580082B7F5E2F00974CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3355800A2B7F5E2F00974CF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3355800C2B7F5E2F00974CF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3355800F2B7F5E2F00974CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		335580112B7F5E3000974CF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		335580142B7F5E3000974CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMenu.swift; sourceTree = "<group>"; };
 		C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCoffeeView.swift; sourceTree = "<group>"; };
 		C0F5D2902B8CA0AC006EB2D1 /* ListCoffeeOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoffeeOption.swift; sourceTree = "<group>"; };
+		C0FEE2062BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +198,7 @@
 			children = (
 				335580082B7F5E2F00974CF7 /* AppDelegate.swift */,
 				3355800A2B7F5E2F00974CF7 /* SceneDelegate.swift */,
-				3355800C2B7F5E2F00974CF7 /* ViewController.swift */,
+				C0FEE2062BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -480,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0FEE2072BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift in Sources */,
 				C0E230582BA15516004C902D /* UserLocationAnnotation.swift in Sources */,
 				C0D90CAB2B98183A000238B5 /* OrderViewController+OrderDelivery.swift in Sources */,
 				C0E230562BA14D51004C902D /* DeliveryViewController+Actions.swift in Sources */,
@@ -492,7 +493,6 @@
 				C0D8E1372BA01694004CC8D2 /* AnnotationShipperView.swift in Sources */,
 				335580432B7F616400974CF7 /* HomeViewController.swift in Sources */,
 				C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */,
-				3355800D2B7F5E2F00974CF7 /* ViewController.swift in Sources */,
 				C0F5D2912B8CA0AC006EB2D1 /* ListCoffeeOption.swift in Sources */,
 				C0E2305B2BA1A677004C902D /* LocationDataManager.swift in Sources */,
 				335580492B7F619D00974CF7 /* DeliveryViewController.swift in Sources */,
@@ -700,9 +700,10 @@
 				DEVELOPMENT_TEAM = JP4GTGBCRS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = coffee_shop/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = Test;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Test;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -729,9 +730,10 @@
 				DEVELOPMENT_TEAM = JP4GTGBCRS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = coffee_shop/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = Test;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Test;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

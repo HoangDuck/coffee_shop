@@ -7,7 +7,9 @@
 
 import UIKit
 
-class HomeViewController: UITabBarController, UITabBarControllerDelegate {
+class HomeViewController: UITabBarController, UITabBarControllerDelegate,MenuTabControllerDelegate {
+    
+    weak var homeDelegate: HomeViewControllerDelegate?
     
     init(){
         super.init(nibName: nil, bundle: nil)
@@ -31,6 +33,7 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate {
     
     private func setUpTabBar() {
         let tab1 = MenuTabViewController()
+        tab1.delegate = self
         let tab2 = MenuTabViewController()
         let tab3 = MenuTabViewController()
         let tab4 = MenuTabViewController()
@@ -62,6 +65,10 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate {
         } else {
             self.tabBar.barTintColor = .white
         }
+    }
+    
+    func didSelectCoffee(coffee: CoffeeMenu) {
+        self.homeDelegate?.didSelectCoffee(coffee: coffee)
     }
     
     class CustomTabBar: UITabBar {

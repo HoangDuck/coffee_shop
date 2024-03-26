@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import UIKit
+
+class CoffeeShopCoordinator: NSObject,OnboardViewControllerDelegate {
+    
+    private let navigationController: UINavigationController = UINavigationController()
+    
+    func navigateToHome() {
+        print("Calllll")
+        let homeVC = HomeViewController()
+        navigationController.pushViewController(homeVC, animated: true)
+    }
+}

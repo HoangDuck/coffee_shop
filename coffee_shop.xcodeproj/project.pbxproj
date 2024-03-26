@@ -49,6 +49,11 @@
 		C0F5D28E2B8C6BF4006EB2D1 /* ItemCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */; };
 		C0F5D2912B8CA0AC006EB2D1 /* ListCoffeeOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D2902B8CA0AC006EB2D1 /* ListCoffeeOption.swift */; };
 		C0FEE2072BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE2062BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift */; };
+		C0FEE2092BB2BFED001D5FD3 /* OnboardViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE2082BB2BFED001D5FD3 /* OnboardViewControllerDelegate.swift */; };
+		C0FEE20B2BB2C88D001D5FD3 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE20A2BB2C88D001D5FD3 /* HomeCoordinator.swift */; };
+		C0FEE20D2BB2C8FD001D5FD3 /* MenuTabControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE20C2BB2C8FD001D5FD3 /* MenuTabControllerDelegate.swift */; };
+		C0FEE20F2BB2C956001D5FD3 /* HomeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE20E2BB2C956001D5FD3 /* HomeViewControllerDelegate.swift */; };
+		C0FEE2112BB2C9A7001D5FD3 /* DetailCoffeeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE2102BB2C9A7001D5FD3 /* DetailCoffeeCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +121,11 @@
 		C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCoffeeView.swift; sourceTree = "<group>"; };
 		C0F5D2902B8CA0AC006EB2D1 /* ListCoffeeOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoffeeOption.swift; sourceTree = "<group>"; };
 		C0FEE2062BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopCoordinator.swift; sourceTree = "<group>"; };
+		C0FEE2082BB2BFED001D5FD3 /* OnboardViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewControllerDelegate.swift; sourceTree = "<group>"; };
+		C0FEE20A2BB2C88D001D5FD3 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		C0FEE20C2BB2C8FD001D5FD3 /* MenuTabControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabControllerDelegate.swift; sourceTree = "<group>"; };
+		C0FEE20E2BB2C956001D5FD3 /* HomeViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerDelegate.swift; sourceTree = "<group>"; };
+		C0FEE2102BB2C9A7001D5FD3 /* DetailCoffeeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoffeeCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +239,7 @@
 			children = (
 				335580402B7F614A00974CF7 /* OnboardViewController.swift */,
 				3355804A2B7F63F400974CF7 /* OnboardViewController.storyboard */,
+				C0FEE2082BB2BFED001D5FD3 /* OnboardViewControllerDelegate.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -241,6 +252,8 @@
 				C0F5D2872B8C3409006EB2D1 /* Model */,
 				338F057E2B833FE200123EA3 /* MenuTab */,
 				335580422B7F616400974CF7 /* HomeViewController.swift */,
+				C0FEE20E2BB2C956001D5FD3 /* HomeViewControllerDelegate.swift */,
+				C0FEE20A2BB2C88D001D5FD3 /* HomeCoordinator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -255,6 +268,7 @@
 				C0E934262B96D4B400C544D7 /* DetailViewController+Ratings.swift */,
 				C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */,
 				C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */,
+				C0FEE2102BB2C9A7001D5FD3 /* DetailCoffeeCoordinator.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -293,6 +307,7 @@
 				C0C4CE0C2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift */,
 				C0C4CE0E2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift */,
 				C0C4CE102B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift */,
+				C0FEE20C2BB2C8FD001D5FD3 /* MenuTabControllerDelegate.swift */,
 			);
 			path = MenuTab;
 			sourceTree = "<group>";
@@ -485,6 +500,7 @@
 				C0D90CAB2B98183A000238B5 /* OrderViewController+OrderDelivery.swift in Sources */,
 				C0E230562BA14D51004C902D /* DeliveryViewController+Actions.swift in Sources */,
 				C0C4CE112B84ADC100C5A5CA /* MenuTabViewController+CoffeeMenu.swift in Sources */,
+				C0FEE20D2BB2C8FD001D5FD3 /* MenuTabControllerDelegate.swift in Sources */,
 				C0B95B4F2B95CAA200DDB471 /* DetailViewController+Divider.swift in Sources */,
 				C0F5D28E2B8C6BF4006EB2D1 /* ItemCoffeeView.swift in Sources */,
 				C0D8E1352BA0156C004CC8D2 /* AnnotationUserView.swift in Sources */,
@@ -493,17 +509,21 @@
 				C0D8E1372BA01694004CC8D2 /* AnnotationShipperView.swift in Sources */,
 				335580432B7F616400974CF7 /* HomeViewController.swift in Sources */,
 				C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */,
+				C0FEE2092BB2BFED001D5FD3 /* OnboardViewControllerDelegate.swift in Sources */,
+				C0FEE2112BB2C9A7001D5FD3 /* DetailCoffeeCoordinator.swift in Sources */,
 				C0F5D2912B8CA0AC006EB2D1 /* ListCoffeeOption.swift in Sources */,
 				C0E2305B2BA1A677004C902D /* LocationDataManager.swift in Sources */,
 				335580492B7F619D00974CF7 /* DeliveryViewController.swift in Sources */,
 				C0B95B4D2B95BF1400DDB471 /* DetailViewController+Coffee.swift in Sources */,
 				C0D90CAF2B988069000238B5 /* OrderViewController+CoffeeNumber.swift in Sources */,
+				C0FEE20B2BB2C88D001D5FD3 /* HomeCoordinator.swift in Sources */,
 				C0D8E1322BA00F85004CC8D2 /* ShipperAnnotation.swift in Sources */,
 				335580092B7F5E2F00974CF7 /* AppDelegate.swift in Sources */,
 				C0E934272B96D4B400C544D7 /* DetailViewController+Ratings.swift in Sources */,
 				C0B95B4B2B9569F600DDB471 /* DetailViewController+Price.swift in Sources */,
 				338F05802B833FF700123EA3 /* MenuTabViewController.swift in Sources */,
 				C0D1B20A2B9973350085AD51 /* OrderViewController+TotalPayment.swift in Sources */,
+				C0FEE20F2BB2C956001D5FD3 /* HomeViewControllerDelegate.swift in Sources */,
 				C0D1B2082B996DF70085AD51 /* OrderViewController+Discount.swift in Sources */,
 				335580472B7F619000974CF7 /* OrderViewController.swift in Sources */,
 				C0E934292B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift in Sources */,

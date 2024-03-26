@@ -27,6 +27,8 @@ class MenuTabViewController: UIViewController {
     //var coffeeOptionView: UICollectionView!
     let coffees: [CoffeeMenu] = CoffeeMenu.mockMenu
     
+    weak var delegate: MenuTabControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()

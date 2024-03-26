@@ -43,8 +43,7 @@ extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = DetailViewController(coffee: coffees[indexPath.row])
-        navigationController?.pushViewController(viewController, animated: true)
+        self.delegate?.didSelectCoffee(coffee: coffees[indexPath.row])
     }
     
     func addMenuCoffee() {

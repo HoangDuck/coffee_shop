@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UITabBarController, UITabBarControllerDelegate,MenuTabControllerDelegate {
     
-    weak var homeDelegate: HomeViewControllerDelegate?
+    var homeDelegate: HomeViewControllerDelegate?
     
     init(){
         super.init(nibName: nil, bundle: nil)
@@ -68,6 +68,7 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate,MenuTab
     }
     
     func didSelectCoffee(coffee: CoffeeMenu) {
+        print("choose 2")
         self.homeDelegate?.didSelectCoffee(coffee: coffee)
     }
     

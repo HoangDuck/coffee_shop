@@ -14,7 +14,8 @@ class OnboardViewController: UIViewController {
     
     @IBAction func handleGetStarted() {
         let homeVC = HomeViewController()
-        navigationController?.pushViewController(homeVC, animated: true)
+        let homeCoordinator = HomeCoordinator(navigationController)
+        homeCoordinator.start()
     }
     
 }

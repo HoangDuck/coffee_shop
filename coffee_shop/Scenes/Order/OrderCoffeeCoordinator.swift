@@ -36,7 +36,6 @@ class OrderCoffeeCoordinator: NSObject,OrderViewControllerDelegate, DeliveryCoff
     
     func didPopDeliveryView(_ coordinator: DeliveryCoffeeCoordinator) {
         coordinators.remove(coordinator)
-        self.delegate?.didPopOrderCoffeeView(self)
     }
     
     func start(){

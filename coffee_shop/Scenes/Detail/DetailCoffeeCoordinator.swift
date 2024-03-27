@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-class DetailCoffeeCoordinator: NSObject,DetailViewControllerDelegate {
+class DetailCoffeeCoordinator: NSObject,DetailViewControllerDelegate, OrderCoffeeCoordinatorDelegate {
+    
     
     private var navigationController: UINavigationController?
     private var coffeeData: CoffeeMenu
@@ -21,9 +22,16 @@ class DetailCoffeeCoordinator: NSObject,DetailViewControllerDelegate {
         super.init()
     }
     
+    
+    func didPopOrderCoffeeView(_ coordinator: OrderCoffeeCoordinator) {
+        coordinators.removeLast()
+    }
+    
     func didBuyNowCoffee() {
-        let vc = OrderViewController(coffee: coffeeData)
-        navigationController?.pushViewController(vc, animated: true)
+        let coordinator = OrderCoffeeCoordinator(self.navigationController, coffeeData: coffeeData)
+        coordinator.delegate = self
+        coordinator.start()
+        coordinators.append(coordinator)
     }
     
     func didPopDetailView() {

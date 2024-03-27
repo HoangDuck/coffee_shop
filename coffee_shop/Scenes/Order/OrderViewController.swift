@@ -15,6 +15,8 @@ class OrderViewController: UIViewController {
     let shipFee: Double = 2.0
     let segmentControl: UISegmentedControl = UISegmentedControl()
     
+    weak var delegate: OrderViewControllerDelegate?
+    
     init(coffee: CoffeeMenu?) {
         self.coffee = coffee
         super.init(nibName: nil, bundle: nil)
@@ -120,7 +122,7 @@ class OrderViewController: UIViewController {
     }
     
     @objc private func didPressBackButton(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        self.delegate?.didPopOrderViewCoffee()
     }
     
     func calculatePriceTotal() -> Double {

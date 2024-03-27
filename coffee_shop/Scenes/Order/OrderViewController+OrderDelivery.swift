@@ -96,7 +96,6 @@ extension OrderViewController {
     }
     
     @objc func orderNowTap(_ sender: UIButton) {
-        let vc = DeliveryViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        self.delegate?.didOrderCoffee()
     }
 }

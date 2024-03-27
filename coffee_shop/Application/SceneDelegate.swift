@@ -7,10 +7,11 @@
 
 import UIKit
 
+var rootCoordinator: OnboardingCoordinator?
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -22,8 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.setNavigationBarHidden(true, animated: false)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
-        let onboardCoordinator = OnboardingCoordinator(self.window?.rootViewController as? UINavigationController)
-        onboardCoordinator.start()
+        rootCoordinator = OnboardingCoordinator(self.window?.rootViewController as? UINavigationController)
+        rootCoordinator?.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -9,12 +9,13 @@ import UIKit
 
 class OnboardViewController: UIViewController {
     
-    var delegate: OnboardViewControllerDelegate? = rootCoordinator//BAD CODE
+    var delegate: OnboardViewControllerDelegate?
     
     @IBOutlet weak private var getStartedButton: UIButton!
     
     @IBAction func handleGetStarted() {
         self.delegate?.getStartedViewHome()
+        
     }
     
 }

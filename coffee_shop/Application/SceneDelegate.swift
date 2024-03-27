@@ -7,8 +7,6 @@
 
 import UIKit
 
-var rootCoordinator: OnboardingCoordinator?//BAD CODE
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -23,8 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.setNavigationBarHidden(true, animated: false)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
-        rootCoordinator = OnboardingCoordinator(self.window?.rootViewController as? UINavigationController)
-        rootCoordinator?.start()
+        let rootCoordinator = OnboardingCoordinator(self.window?.rootViewController as? UINavigationController)
+        rootCoordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

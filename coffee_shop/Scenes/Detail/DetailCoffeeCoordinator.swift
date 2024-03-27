@@ -23,6 +23,7 @@ class DetailCoffeeCoordinator: NSObject,DetailViewControllerDelegate, OrderCoffe
     
     func didPopOrderCoffeeView(_ coordinator: OrderCoffeeCoordinator) {
         coordinators.removeLast()
+        self.delegate?.didPopDetailCoffeeView(self)
     }
     
     func didBuyNowCoffee() {

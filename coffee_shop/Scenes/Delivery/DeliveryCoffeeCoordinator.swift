@@ -12,7 +12,6 @@ class DeliveryCoffeeCoordinator: NSObject, DeliveryViewControllerDelegate {
     
     private var navigationController: UINavigationController?
     weak var delegate: DeliveryCoffeeCoordinatorDelegate?
-    private var coordinators: [NSObject] = []
     
     init(_ navigationController: UINavigationController?) {
         self.navigationController = navigationController
@@ -27,7 +26,6 @@ class DeliveryCoffeeCoordinator: NSObject, DeliveryViewControllerDelegate {
     
     func didPopDeliveryView() {
         navigationController?.popViewController(animated: true)
-        coordinators.removeAll()
         self.delegate?.didPopDeliveryView(self)
     }
 }

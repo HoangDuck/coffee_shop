@@ -277,13 +277,7 @@
 		3355803D2B7F60D300974CF7 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				335580442B7F618300974CF7 /* DetailViewController.swift */,
-				C0B95B4A2B9569F600DDB471 /* DetailViewController+Price.swift */,
-				C0B95B4C2B95BF1400DDB471 /* DetailViewController+Coffee.swift */,
-				C0B95B4E2B95CAA200DDB471 /* DetailViewController+Divider.swift */,
-				C0E934262B96D4B400C544D7 /* DetailViewController+Ratings.swift */,
-				C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */,
-				C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */,
+				C0F70E162BB3CA6F0018E3A6 /* View */,
 				C0FEE2102BB2C9A7001D5FD3 /* DetailCoffeeCoordinator.swift */,
 				C0F70E042BB3B17D0018E3A6 /* DetailCoffeeCoordinatorDelegate.swift */,
 				C0F70E062BB3B2A80018E3A6 /* DetailViewControllerDelegate.swift */,
@@ -294,12 +288,7 @@
 		3355803E2B7F60DA00974CF7 /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				335580462B7F619000974CF7 /* OrderViewController.swift */,
-				C0D90CAA2B98183A000238B5 /* OrderViewController+OrderDelivery.swift */,
-				C0D90CAC2B98732F000238B5 /* OrderViewController+Address.swift */,
-				C0D90CAE2B988069000238B5 /* OrderViewController+CoffeeNumber.swift */,
-				C0D1B2072B996DF70085AD51 /* OrderViewController+Discount.swift */,
-				C0D1B2092B9973350085AD51 /* OrderViewController+TotalPayment.swift */,
+				C0F70E152BB3CA630018E3A6 /* View */,
 				C0F70E082BB3BF7D0018E3A6 /* OrderCoffeeCoordinator.swift */,
 				C0F70E0A2BB3BF850018E3A6 /* OrderCoffeeCoordinatorDelegate.swift */,
 				C0F70E0C2BB3C02A0018E3A6 /* OrderViewControllerDelegate.swift */,
@@ -310,12 +299,10 @@
 		3355803F2B7F60E300974CF7 /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				C0F70E142BB3CA480018E3A6 /* View */,
 				C0E230592BA1A666004C902D /* LocationManager */,
 				C0D8E1332BA0155B004CC8D2 /* AnnotaionsView */,
 				C0D8E12E2BA00F5F004CC8D2 /* Annotations */,
-				335580482B7F619D00974CF7 /* DeliveryViewController.swift */,
-				C0D1B20B2B99BC850085AD51 /* DeliveryTrackingViewController.swift */,
-				C0E230552BA14D51004C902D /* DeliveryViewController+Actions.swift */,
 				C0F70E0E2BB3C4000018E3A6 /* DeliveryCoffeeCoordinator.swift */,
 				C0F70E102BB3C40C0018E3A6 /* DeliveryCoffeeCoordinatorDelegate.swift */,
 				C0F70E122BB3C4180018E3A6 /* DeliveryViewControllerDelegate.swift */,
@@ -385,6 +372,43 @@
 				C0F5D2902B8CA0AC006EB2D1 /* ListCoffeeOption.swift */,
 			);
 			path = ListMenuCoffeeCustom;
+			sourceTree = "<group>";
+		};
+		C0F70E142BB3CA480018E3A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				335580482B7F619D00974CF7 /* DeliveryViewController.swift */,
+				C0D1B20B2B99BC850085AD51 /* DeliveryTrackingViewController.swift */,
+				C0E230552BA14D51004C902D /* DeliveryViewController+Actions.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0F70E152BB3CA630018E3A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				335580462B7F619000974CF7 /* OrderViewController.swift */,
+				C0D90CAA2B98183A000238B5 /* OrderViewController+OrderDelivery.swift */,
+				C0D90CAC2B98732F000238B5 /* OrderViewController+Address.swift */,
+				C0D90CAE2B988069000238B5 /* OrderViewController+CoffeeNumber.swift */,
+				C0D1B2072B996DF70085AD51 /* OrderViewController+Discount.swift */,
+				C0D1B2092B9973350085AD51 /* OrderViewController+TotalPayment.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0F70E162BB3CA6F0018E3A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				335580442B7F618300974CF7 /* DetailViewController.swift */,
+				C0B95B4A2B9569F600DDB471 /* DetailViewController+Price.swift */,
+				C0B95B4C2B95BF1400DDB471 /* DetailViewController+Coffee.swift */,
+				C0B95B4E2B95CAA200DDB471 /* DetailViewController+Divider.swift */,
+				C0E934262B96D4B400C544D7 /* DetailViewController+Ratings.swift */,
+				C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */,
+				C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -121,12 +121,9 @@ extension DeliveryViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var annotationViews: MKAnnotationView?
-        print("Set up view annotations")
         if let annotation = annotation as? ShipperAnnotation {
-            print("Set up view annotations shipper")
             annotationViews = setupViewForShipperAnnotations(for: annotation, on: mapView)
         } else if let annotation = annotation as? MKUserLocation {
-            print("Set up view annotations location")
             annotationViews = setupViewForCurrentUserLocationAnnotations(for: annotation, on: mapView)
         }
         return annotationViews

@@ -24,6 +24,7 @@ class HomeCoordinator: NSObject, HomeViewControllerDelegate,DetailCoffeeCoordina
     
     func didSelectCoffee(coffee: CoffeeMenu) {
         let coordinator = DetailCoffeeCoordinator(self.navigationController, coffee: coffee)
+        coordinator.delegate = self
         coordinator.start()
         coordinators.append(coordinator)
     }

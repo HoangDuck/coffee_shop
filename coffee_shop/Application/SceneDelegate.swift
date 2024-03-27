@@ -18,11 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
-        let storyBoardOnboard = UIStoryboard(name: "OnboardViewController", bundle: nil)
-        let onboardViewController = storyBoardOnboard.instantiateViewController(identifier: "OnboardViewController")
-        let navigationController = UINavigationController(rootViewController: onboardViewController)
+        let navigationController = UINavigationController()
+        navigationController.setNavigationBarHidden(true, animated: false)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
+        let onboardCoordinator = OnboardingCoordinator(self.window?.rootViewController as? UINavigationController)
+        onboardCoordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

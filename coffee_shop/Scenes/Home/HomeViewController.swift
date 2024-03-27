@@ -50,7 +50,6 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate,MenuTab
     }
     
     private func setUpUI() {
-        navigationController?.setNavigationBarHidden(true, animated: false)
         tabBar.layer.masksToBounds = true
         tabBar.layer.cornerRadius = 30
         

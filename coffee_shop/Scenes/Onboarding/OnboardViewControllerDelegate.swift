@@ -8,5 +8,5 @@
 import Foundation
 
 protocol OnboardViewControllerDelegate: NSObject {
-    func navigateToHome()
+    func getStartedViewHome()
 }

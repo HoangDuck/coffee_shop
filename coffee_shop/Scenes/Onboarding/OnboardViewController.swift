@@ -9,10 +9,12 @@ import UIKit
 
 class OnboardViewController: UIViewController {
     
+    weak var delegate: OnboardViewControllerDelegate?
+    
     @IBOutlet weak private var getStartedButton: UIButton!
     
-    
     @IBAction func handleGetStarted() {
+//        self.delegate?.getStartedViewHome()
         let homeCoordinator = HomeCoordinator(navigationController)
         homeCoordinator.start()
     }

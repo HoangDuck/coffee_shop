@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class OrderCoffeeCoordinator: NSObject,OrderViewControllerDelegate {
+class OrderCoffeeCoordinator: NSObject,OrderViewControllerDelegate, DeliveryCoffeeCoordinatorDelegate {
     
     private var navigationController: UINavigationController?
     private var coffeeData: CoffeeMenu
@@ -28,8 +28,14 @@ class OrderCoffeeCoordinator: NSObject,OrderViewControllerDelegate {
     }
     
     func didOrderCoffee() {
-        let vc = DeliveryViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        let coordinator = DeliveryCoffeeCoordinator(self.navigationController)
+        coordinator.delegate = self
+        coordinator.start()
+        coordinators.append(coordinator)
+    }
+    
+    func didPopDeliveryView(_ coordinator: DeliveryCoffeeCoordinator) {
+        coordinators.removeLast()
     }
     
     func start(){

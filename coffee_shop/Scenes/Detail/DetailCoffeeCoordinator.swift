@@ -10,7 +10,6 @@ import UIKit
 
 class DetailCoffeeCoordinator: NSObject,DetailViewControllerDelegate, OrderCoffeeCoordinatorDelegate {
     
-    
     private var navigationController: UINavigationController?
     private var coffeeData: CoffeeMenu
     weak var delegate: DetailCoffeeCoordinatorDelegate?
@@ -21,7 +20,6 @@ class DetailCoffeeCoordinator: NSObject,DetailViewControllerDelegate, OrderCoffe
         self.coffeeData = coffee
         super.init()
     }
-    
     
     func didPopOrderCoffeeView(_ coordinator: OrderCoffeeCoordinator) {
         coordinators.removeLast()

@@ -31,6 +31,8 @@ class DeliveryViewController: UIViewController {
         }
     }
     
+    weak var delegate: DeliveryViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()

@@ -57,7 +57,7 @@ extension DeliveryViewController {
     }
     
     @objc private func navigatorBack(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        self.delegate?.didPopDeliveryView()
     }
     
     @objc private func navigateToUserLocation(_ sender: UIButton) {

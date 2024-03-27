@@ -13,7 +13,7 @@ class DetailCoffeeCoordinator: NSObject,DetailViewControllerDelegate, OrderCoffe
     private var navigationController: UINavigationController?
     private var coffeeData: CoffeeMenu
     weak var delegate: DetailCoffeeCoordinatorDelegate?
-    private var coordinators: [NSObject] = []
+    private var coordinators: NSMutableArray = []
     
     init(_ navigationController: UINavigationController?, coffee: CoffeeMenu) {
         self.navigationController = navigationController
@@ -22,7 +22,7 @@ class DetailCoffeeCoordinator: NSObject,DetailViewControllerDelegate, OrderCoffe
     }
     
     func didPopOrderCoffeeView(_ coordinator: OrderCoffeeCoordinator) {
-        coordinators.removeLast()
+        coordinators.remove(coordinator)
         self.delegate?.didPopDetailCoffeeView(self)
     }
     
@@ -30,12 +30,12 @@ class DetailCoffeeCoordinator: NSObject,DetailViewControllerDelegate, OrderCoffe
         let coordinator = OrderCoffeeCoordinator(self.navigationController, coffeeData: coffeeData)
         coordinator.delegate = self
         coordinator.start()
-        coordinators.append(coordinator)
+        coordinators.add(coordinator)
     }
     
     func didPopDetailView() {
         navigationController?.popViewController(animated: true)
-        self.coordinators.removeAll()
+        self.coordinators.removeAllObjects()
         self.delegate?.didPopDetailCoffeeView(self)
     }
     

@@ -11,7 +11,7 @@ import UIKit
 class HomeCoordinator: NSObject, HomeViewControllerDelegate,DetailCoffeeCoordinatorDelegate {
     
     private var navigationController: UINavigationController?
-    private var coordinators:[NSObject] = [];
+    private var coordinators:NSMutableArray = [];
     
     init(_ navigationController: UINavigationController?) {
         super.init()
@@ -19,14 +19,14 @@ class HomeCoordinator: NSObject, HomeViewControllerDelegate,DetailCoffeeCoordina
     }
     
     func didPopDetailCoffeeView(_ coordinator: DetailCoffeeCoordinator) {
-        coordinators.removeLast()
+        coordinators.remove(coordinator)
     }
     
     func didSelectCoffee(coffee: CoffeeMenu) {
         let coordinator = DetailCoffeeCoordinator(self.navigationController, coffee: coffee)
         coordinator.delegate = self
         coordinator.start()
-        coordinators.append(coordinator)
+        coordinators.add(coordinator)
     }
     
     func start() -> Void {

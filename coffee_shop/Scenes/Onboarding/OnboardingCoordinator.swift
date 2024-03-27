@@ -24,8 +24,7 @@ class OnboardingCoordinator: NSObject, OnboardViewControllerDelegate {
     
     func start(){
         let storyBoardOnboard = UIStoryboard(name: "OnboardViewController", bundle: nil)
-        let onboardViewController = storyBoardOnboard.instantiateViewController(identifier: "OnboardViewController") as OnboardViewController
-        onboardViewController.delegate = self
+        let onboardViewController = storyBoardOnboard.instantiateViewController(identifier: "OnboardViewController")
         self.navigationController?.pushViewController(onboardViewController, animated: true)
     }
 }

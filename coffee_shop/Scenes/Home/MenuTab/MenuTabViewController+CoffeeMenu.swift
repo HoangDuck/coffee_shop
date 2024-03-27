@@ -43,7 +43,6 @@ extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("choose")
         self.delegate?.didSelectCoffee(coffee: coffees[indexPath.row])
     }
     

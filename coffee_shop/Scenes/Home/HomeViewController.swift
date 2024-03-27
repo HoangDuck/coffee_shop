@@ -68,7 +68,6 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate,MenuTab
     }
     
     func didSelectCoffee(coffee: CoffeeMenu) {
-        print("choose 2")
         self.homeDelegate?.didSelectCoffee(coffee: coffee)
     }
     

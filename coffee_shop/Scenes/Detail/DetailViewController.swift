@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     let scrollView: UIScrollView = UIScrollView()
     //stack view
     let detailStackView: UIStackView = UIStackView()
+    weak var delegate: DetailViewControllerDelegate?
     
     init(coffee: CoffeeMenu?) {
         self.coffee = coffee
@@ -103,6 +104,6 @@ class DetailViewController: UIViewController {
     }
     
     @objc private func didPressBackButton(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        self.delegate?.didPopDetailView()
     }
 }

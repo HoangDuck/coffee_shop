@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HomeCoordinator: NSObject, HomeViewControllerDelegate {
+class HomeCoordinator: NSObject, HomeViewControllerDelegate,DetailCoffeeCoordinatorDelegate {
     
     private var navigationController: UINavigationController?
     private var coordinators:[NSObject] = [];
@@ -18,10 +18,14 @@ class HomeCoordinator: NSObject, HomeViewControllerDelegate {
         self.navigationController = navigationController
     }
     
+    func didPopDetailCoffeeView(_ coordinator: DetailCoffeeCoordinator) {
+        coordinators.removeLast()
+    }
+    
     func didSelectCoffee(coffee: CoffeeMenu) {
-        print("choose 1")
-        let viewController = DetailViewController(coffee: coffee)
-        navigationController?.pushViewController(viewController, animated: true)
+        let coordinator = DetailCoffeeCoordinator(self.navigationController, coffee: coffee)
+        coordinator.start()
+        coordinators.append(coordinator)
     }
     
     func start() -> Void {

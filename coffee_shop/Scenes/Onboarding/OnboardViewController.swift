@@ -13,7 +13,6 @@ class OnboardViewController: UIViewController {
     
     
     @IBAction func handleGetStarted() {
-        let homeVC = HomeViewController()
         let homeCoordinator = HomeCoordinator(navigationController)
         homeCoordinator.start()
     }

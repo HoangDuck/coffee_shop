@@ -48,6 +48,8 @@
 		C0F5D28B2B8C34E5006EB2D1 /* CoffeeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */; };
 		C0F5D28E2B8C6BF4006EB2D1 /* ItemCoffeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */; };
 		C0F5D2912B8CA0AC006EB2D1 /* ListCoffeeOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F5D2902B8CA0AC006EB2D1 /* ListCoffeeOption.swift */; };
+		C0F70E052BB3B17D0018E3A6 /* DetailCoffeeCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70E042BB3B17D0018E3A6 /* DetailCoffeeCoordinatorDelegate.swift */; };
+		C0F70E072BB3B2A80018E3A6 /* DetailViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F70E062BB3B2A80018E3A6 /* DetailViewControllerDelegate.swift */; };
 		C0FEE2072BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE2062BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift */; };
 		C0FEE2092BB2BFED001D5FD3 /* OnboardViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE2082BB2BFED001D5FD3 /* OnboardViewControllerDelegate.swift */; };
 		C0FEE20B2BB2C88D001D5FD3 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE20A2BB2C88D001D5FD3 /* HomeCoordinator.swift */; };
@@ -120,6 +122,8 @@
 		C0F5D28A2B8C34E5006EB2D1 /* CoffeeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMenu.swift; sourceTree = "<group>"; };
 		C0F5D28D2B8C6BF4006EB2D1 /* ItemCoffeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCoffeeView.swift; sourceTree = "<group>"; };
 		C0F5D2902B8CA0AC006EB2D1 /* ListCoffeeOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoffeeOption.swift; sourceTree = "<group>"; };
+		C0F70E042BB3B17D0018E3A6 /* DetailCoffeeCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoffeeCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		C0F70E062BB3B2A80018E3A6 /* DetailViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerDelegate.swift; sourceTree = "<group>"; };
 		C0FEE2062BB2B1C5001D5FD3 /* CoffeeShopCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopCoordinator.swift; sourceTree = "<group>"; };
 		C0FEE2082BB2BFED001D5FD3 /* OnboardViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewControllerDelegate.swift; sourceTree = "<group>"; };
 		C0FEE20A2BB2C88D001D5FD3 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 				C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */,
 				C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */,
 				C0FEE2102BB2C9A7001D5FD3 /* DetailCoffeeCoordinator.swift */,
+				C0F70E042BB3B17D0018E3A6 /* DetailCoffeeCoordinatorDelegate.swift */,
+				C0F70E062BB3B2A80018E3A6 /* DetailViewControllerDelegate.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 				C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */,
 				C0FEE2092BB2BFED001D5FD3 /* OnboardViewControllerDelegate.swift in Sources */,
 				C0FEE2112BB2C9A7001D5FD3 /* DetailCoffeeCoordinator.swift in Sources */,
+				C0F70E052BB3B17D0018E3A6 /* DetailCoffeeCoordinatorDelegate.swift in Sources */,
 				C0F5D2912B8CA0AC006EB2D1 /* ListCoffeeOption.swift in Sources */,
 				C0E2305B2BA1A677004C902D /* LocationDataManager.swift in Sources */,
 				335580492B7F619D00974CF7 /* DeliveryViewController.swift in Sources */,
@@ -530,6 +537,7 @@
 				C0D90CAD2B98732F000238B5 /* OrderViewController+Address.swift in Sources */,
 				C0E9342B2B97076D00C544D7 /* DetailViewController+Size.swift in Sources */,
 				C0F5D2892B8C341A006EB2D1 /* CoffeeCategory.swift in Sources */,
+				C0F70E072BB3B2A80018E3A6 /* DetailViewControllerDelegate.swift in Sources */,
 				335580452B7F618300974CF7 /* DetailViewController.swift in Sources */,
 				335580412B7F614A00974CF7 /* OnboardViewController.swift in Sources */,
 				C0D1B20C2B99BC850085AD51 /* DeliveryTrackingViewController.swift in Sources */,

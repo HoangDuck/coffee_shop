@@ -9,7 +9,7 @@ import UIKit
 
 class OnboardViewController: UIViewController {
     
-    var delegate: OnboardViewControllerDelegate? = rootCoordinator
+    var delegate: OnboardViewControllerDelegate? = rootCoordinator//BAD CODE
     
     @IBOutlet weak private var getStartedButton: UIButton!
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-var rootCoordinator: OnboardingCoordinator?
+var rootCoordinator: OnboardingCoordinator?//BAD CODE
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

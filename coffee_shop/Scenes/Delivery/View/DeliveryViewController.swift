@@ -80,7 +80,6 @@ class DeliveryViewController: UIViewController {
         serviceGetData.calculate(completionHandler: {
             response, error in
             if error == nil {
-                print("Add overlay")
                 let overlayPathMap = response!.routes[0].polyline
                 self.mapView.addOverlay(overlayPathMap ,level: .aboveRoads)
             } else {

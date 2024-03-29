@@ -17,7 +17,30 @@ class OnboardingCoordinator: NSObject, OnboardViewControllerDelegate {
         super.init()
     }
     
-    func getStartedViewHome() {
+    func navigateToHome() {
+        let homeCoordinator = HomeCoordinator(navigationController)
+        homeCoordinator.start()
+    }
+    
+    func start(){
+        let storyBoardOnboard = UIStoryboard(name: "OnboardViewController", bundle: nil)
+        if let onboardViewController = storyBoardOnboard.instantiateViewController(identifier: "OnboardViewController") as? OnboardViewController {
+            onboardViewController.delegate = self
+            self.navigationController?.pushViewController(onboardViewController, animated: true)
+        }
+    }
+}
+
+class CoordinatorB: NSObject, OnboardViewControllerDelegate {
+    
+    private var navigationController: UINavigationController?
+    
+    init(_ navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+        super.init()
+    }
+    
+    func navigateToHome() {
         let homeCoordinator = HomeCoordinator(navigationController)
         homeCoordinator.start()
     }

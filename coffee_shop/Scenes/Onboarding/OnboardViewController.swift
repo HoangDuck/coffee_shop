@@ -14,8 +14,6 @@ class OnboardViewController: UIViewController {
     @IBOutlet weak private var getStartedButton: UIButton!
     
     @IBAction func handleGetStarted() {
-        self.delegate?.getStartedViewHome()
-        
+        self.delegate?.navigateToHome()
     }
-    
 }

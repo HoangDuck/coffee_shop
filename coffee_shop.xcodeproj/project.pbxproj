@@ -197,6 +197,7 @@
 				335580112B7F5E3000974CF7 /* Assets.xcassets */,
 				335580162B7F5E3000974CF7 /* Info.plist */,
 				3355803A2B7F604B00974CF7 /* Scenes */,
+				C0F70E1C2BB41CF90018E3A6 /* Core */,
 				335580392B7F5F7F00974CF7 /* Supporting Files */,
 			);
 			path = coffee_shop;
@@ -409,6 +410,29 @@
 				C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C0F70E1B2BB41CBC0018E3A6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C0F70E1C2BB41CF90018E3A6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C0F70E1D2BB41D230018E3A6 /* LocalStorage */,
+				C0F70E1B2BB41CBC0018E3A6 /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C0F70E1D2BB41D230018E3A6 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

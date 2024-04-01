@@ -32,6 +32,11 @@
 		C0D1B2082B996DF70085AD51 /* OrderViewController+Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1B2072B996DF70085AD51 /* OrderViewController+Discount.swift */; };
 		C0D1B20A2B9973350085AD51 /* OrderViewController+TotalPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1B2092B9973350085AD51 /* OrderViewController+TotalPayment.swift */; };
 		C0D1B20C2B99BC850085AD51 /* DeliveryTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1B20B2B99BC850085AD51 /* DeliveryTrackingViewController.swift */; };
+		C0D89EAE2BBABA1A00FA0C08 /* SendableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D89EAD2BBABA1A00FA0C08 /* SendableRequest.swift */; };
+		C0D89EB02BBABA3F00FA0C08 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D89EAF2BBABA3F00FA0C08 /* RequestBuilder.swift */; };
+		C0D89EB22BBABA5D00FA0C08 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D89EB12BBABA5D00FA0C08 /* ResponseHandler.swift */; };
+		C0D89EB42BBABAB000FA0C08 /* RequestTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D89EB32BBABAB000FA0C08 /* RequestTemplate.swift */; };
+		C0D89EB62BBABABC00FA0C08 /* RequestSafeTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D89EB52BBABABC00FA0C08 /* RequestSafeTemplate.swift */; };
 		C0D8E1322BA00F85004CC8D2 /* ShipperAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8E1312BA00F85004CC8D2 /* ShipperAnnotation.swift */; };
 		C0D8E1352BA0156C004CC8D2 /* AnnotationUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8E1342BA0156C004CC8D2 /* AnnotationUserView.swift */; };
 		C0D8E1372BA01694004CC8D2 /* AnnotationShipperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8E1362BA01694004CC8D2 /* AnnotationShipperView.swift */; };
@@ -111,6 +116,11 @@
 		C0D1B2072B996DF70085AD51 /* OrderViewController+Discount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+Discount.swift"; sourceTree = "<group>"; };
 		C0D1B2092B9973350085AD51 /* OrderViewController+TotalPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderViewController+TotalPayment.swift"; sourceTree = "<group>"; };
 		C0D1B20B2B99BC850085AD51 /* DeliveryTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTrackingViewController.swift; sourceTree = "<group>"; };
+		C0D89EAD2BBABA1A00FA0C08 /* SendableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendableRequest.swift; sourceTree = "<group>"; };
+		C0D89EAF2BBABA3F00FA0C08 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		C0D89EB12BBABA5D00FA0C08 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		C0D89EB32BBABAB000FA0C08 /* RequestTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTemplate.swift; sourceTree = "<group>"; };
+		C0D89EB52BBABABC00FA0C08 /* RequestSafeTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSafeTemplate.swift; sourceTree = "<group>"; };
 		C0D8E1312BA00F85004CC8D2 /* ShipperAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipperAnnotation.swift; sourceTree = "<group>"; };
 		C0D8E1342BA0156C004CC8D2 /* AnnotationUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationUserView.swift; sourceTree = "<group>"; };
 		C0D8E1362BA01694004CC8D2 /* AnnotationShipperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationShipperView.swift; sourceTree = "<group>"; };
@@ -415,6 +425,11 @@
 		C0F70E1B2BB41CBC0018E3A6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				C0D89EAD2BBABA1A00FA0C08 /* SendableRequest.swift */,
+				C0D89EAF2BBABA3F00FA0C08 /* RequestBuilder.swift */,
+				C0D89EB12BBABA5D00FA0C08 /* ResponseHandler.swift */,
+				C0D89EB32BBABAB000FA0C08 /* RequestTemplate.swift */,
+				C0D89EB52BBABABC00FA0C08 /* RequestSafeTemplate.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -575,6 +590,7 @@
 				C0FEE20D2BB2C8FD001D5FD3 /* MenuTabControllerDelegate.swift in Sources */,
 				C0B95B4F2B95CAA200DDB471 /* DetailViewController+Divider.swift in Sources */,
 				C0F5D28E2B8C6BF4006EB2D1 /* ItemCoffeeView.swift in Sources */,
+				C0D89EB22BBABA5D00FA0C08 /* ResponseHandler.swift in Sources */,
 				C0D8E1352BA0156C004CC8D2 /* AnnotationUserView.swift in Sources */,
 				C0C4CE0D2B84AD8700C5A5CA /* MenuTabViewController+Location+Avatar.swift in Sources */,
 				C0F5D28B2B8C34E5006EB2D1 /* CoffeeMenu.swift in Sources */,
@@ -582,6 +598,7 @@
 				335580432B7F616400974CF7 /* HomeViewController.swift in Sources */,
 				C0C4CE0F2B84ADAC00C5A5CA /* MenuTabViewController+Promote.swift in Sources */,
 				C0FEE2092BB2BFED001D5FD3 /* OnboardViewControllerDelegate.swift in Sources */,
+				C0D89EB02BBABA3F00FA0C08 /* RequestBuilder.swift in Sources */,
 				C0FEE2112BB2C9A7001D5FD3 /* DetailCoffeeCoordinator.swift in Sources */,
 				C0F70E052BB3B17D0018E3A6 /* DetailCoffeeCoordinatorDelegate.swift in Sources */,
 				C0F70E1A2BB3CF6F0018E3A6 /* OnboardingCoordinator.swift in Sources */,
@@ -594,6 +611,7 @@
 				C0FEE20B2BB2C88D001D5FD3 /* HomeCoordinator.swift in Sources */,
 				C0D8E1322BA00F85004CC8D2 /* ShipperAnnotation.swift in Sources */,
 				335580092B7F5E2F00974CF7 /* AppDelegate.swift in Sources */,
+				C0D89EB42BBABAB000FA0C08 /* RequestTemplate.swift in Sources */,
 				C0E934272B96D4B400C544D7 /* DetailViewController+Ratings.swift in Sources */,
 				C0B95B4B2B9569F600DDB471 /* DetailViewController+Price.swift in Sources */,
 				338F05802B833FF700123EA3 /* MenuTabViewController.swift in Sources */,
@@ -604,9 +622,11 @@
 				C0E934292B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift in Sources */,
 				C0D90CAD2B98732F000238B5 /* OrderViewController+Address.swift in Sources */,
 				C0F70E0F2BB3C4000018E3A6 /* DeliveryCoffeeCoordinator.swift in Sources */,
+				C0D89EB62BBABABC00FA0C08 /* RequestSafeTemplate.swift in Sources */,
 				C0E9342B2B97076D00C544D7 /* DetailViewController+Size.swift in Sources */,
 				C0F5D2892B8C341A006EB2D1 /* CoffeeCategory.swift in Sources */,
 				C0F70E112BB3C40C0018E3A6 /* DeliveryCoffeeCoordinatorDelegate.swift in Sources */,
+				C0D89EAE2BBABA1A00FA0C08 /* SendableRequest.swift in Sources */,
 				C0F70E072BB3B2A80018E3A6 /* DetailViewControllerDelegate.swift in Sources */,
 				335580452B7F618300974CF7 /* DetailViewController.swift in Sources */,
 				335580412B7F614A00974CF7 /* OnboardViewController.swift in Sources */,

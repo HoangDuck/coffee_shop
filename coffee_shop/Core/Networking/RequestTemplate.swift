@@ -8,8 +8,8 @@
 import Foundation
 
 protocol RequestTemplate {
-    var method: String { get set }
-    var path: String { get set }
-    var parameters: NSDictionary { get set }
-    var headers: NSDictionary { get set }
+    var method: String { get }
+    var path: String { get }
+    var parameters: NSDictionary { get }
+    var headers: NSDictionary { get }
 }

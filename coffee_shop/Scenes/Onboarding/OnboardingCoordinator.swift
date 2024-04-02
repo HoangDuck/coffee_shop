@@ -18,29 +18,16 @@ class OnboardingCoordinator: NSObject, OnboardViewControllerDelegate {
     }
     
     func navigateToHome() {
-        let homeCoordinator = HomeCoordinator(navigationController)
-        homeCoordinator.start()
-    }
-    
-    func start(){
-        let storyBoardOnboard = UIStoryboard(name: "OnboardViewController", bundle: nil)
-        if let onboardViewController = storyBoardOnboard.instantiateViewController(identifier: "OnboardViewController") as? OnboardViewController {
-            onboardViewController.delegate = self
-            self.navigationController?.pushViewController(onboardViewController, animated: true)
+        print("Init request")
+        let request = RequestGetListCoffee()
+        let requestSend = SendableRequest(requestTemplate: request)
+        requestSend.send(successCallback: {
+            data in
+            print(data)
+        }) {
+            error in
+            print(error.localizedDescription)
         }
-    }
-}
-
-class CoordinatorB: NSObject, OnboardViewControllerDelegate {
-    
-    private var navigationController: UINavigationController?
-    
-    init(_ navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-        super.init()
-    }
-    
-    func navigateToHome() {
         let homeCoordinator = HomeCoordinator(navigationController)
         homeCoordinator.start()
     }

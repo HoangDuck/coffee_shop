@@ -46,4 +46,8 @@ class RequestSafeTemplate: NSObject {
         return "\(self.basePath)\(requestTemplate.path)"
     }
     
+    var parameters: NSDictionary {
+        return requestTemplate.parameters
+    }
+    
 }

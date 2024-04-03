@@ -27,7 +27,21 @@ class RequestBuilder: NSObject {
     var URL: URL {
         var urlComponents = URLComponents(url: self.safeRequestTemplate.baseUrl, resolvingAgainstBaseURL: true)
         urlComponents?.path = self.safeRequestTemplate.path
+        if(self.safeRequestTemplate.isGetMethod){
+            var parameters:[URLQueryItem] = parametersAsQueryItems
+            parameters.append(contentsOf: urlComponents?.queryItems ?? [])
+            urlComponents?.queryItems = parameters
+        }
         return urlComponents?.url ?? self.safeRequestTemplate.baseUrl
+    }
+    
+    var parametersAsQueryItems: [URLQueryItem] {
+        var arrayParamters:[URLQueryItem] = []
+        self.safeRequestTemplate.parameters.enumerateKeysAndObjects() {
+            key, value, _ in
+            arrayParamters.append(URLQueryItem(name: key as? String ?? "", value: value as? String))
+        }
+        return arrayParamters
     }
     
     var urlRequest: URLRequest {

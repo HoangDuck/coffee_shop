@@ -13,11 +13,13 @@ struct RequestGetListCoffee: RequestTemplate {
     }
     
     var path: String{
-        return "/random.php"
+        return "/search.php"
     }
     
     var parameters: NSDictionary {
-        return [:]
+        return [
+            "s":""
+        ]
     }
     
     var headers: NSDictionary {
@@ -26,6 +28,4 @@ struct RequestGetListCoffee: RequestTemplate {
             "Content-Type": "application/json"
         ]
     }
-    
-    
 }

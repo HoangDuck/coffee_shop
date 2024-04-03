@@ -18,9 +18,8 @@ class OnboardingCoordinator: NSObject, OnboardViewControllerDelegate {
     }
     
     func navigateToHome() {
-        print("Init request")
         let request = RequestGetListCoffee()
-        let requestSend = SendableRequest(requestTemplate: request)
+        let requestSend = SendableRequest<ListDrinks>(requestTemplate: request)
         requestSend.send(successCallback: {
             data in
             print(data)

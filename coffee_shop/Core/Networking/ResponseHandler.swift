@@ -7,11 +7,11 @@
 
 import Foundation
 
-class ResponseHandler: NSObject {
+class ResponseHandler<T:Decodable>: NSObject {
     private var data: Data?
     private var response: URLResponse?
     private var error: Error?
-    private var dataResponse: [String:Any]?
+    private var dataResponse: T?
     
     init(data: Data?, response: URLResponse?, error: Error?) {
         self.data = data
@@ -35,17 +35,18 @@ class ResponseHandler: NSObject {
         return self.HTTPResponse?.statusCode ?? 400
     }
     
-    var result: [String: Any]? {
+    var result: T? {
         if(dataResponse != nil) {
             return dataResponse
         }
         do {
-            let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
+            let jsonDecoder = JSONDecoder()
+            let json = try jsonDecoder.decode(T.self, from: data!)
             dataResponse = json
             return dataResponse
         } catch {
             print("errorMsg: \(error)")
         }
-        return [String: Any]()
+        return nil
     }
 }

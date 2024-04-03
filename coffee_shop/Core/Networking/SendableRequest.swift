@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SendableRequest:NSObject {
+class SendableRequest<T: Decodable>:NSObject {
     private var requestBuilder: RequestBuilder
     
     init(requestTemplate: RequestTemplate) {
@@ -23,11 +23,11 @@ class SendableRequest:NSObject {
         let urlSession = URLSession.shared
         urlSession.dataTask(with: self.requestBuilder.urlRequest) {
             data, response, error in
-            let responseHandler: ResponseHandler = ResponseHandler(data: data, response: response, error: error)
+            let responseHandler: ResponseHandler<T> = ResponseHandler<T>(data: data, response: response, error: error)
             if ((responseHandler.Error) != nil) {
                 errorCallback(responseHandler.Error!)
-            } else if (responseHandler.result != nil && data != nil ){
-                successCallback(responseHandler.result ?? [String: Any]())
+            } else if (data != nil){
+                successCallback(responseHandler.result ?? [T]())
             }
         }.resume()
     }

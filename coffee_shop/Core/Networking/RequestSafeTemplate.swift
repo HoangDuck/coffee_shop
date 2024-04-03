@@ -27,7 +27,19 @@ class RequestSafeTemplate: NSObject {
     }
     
     var header: NSDictionary {
-        return requestTemplate.headers
+        var baseHeader = self.baseHeader
+        self.requestTemplate.headers.enumerateKeysAndObjects() {
+            field, value, _ in
+            baseHeader.setValue(value, forKey: field as? String ?? "")
+        }
+        return baseHeader
+    }
+    
+    var baseHeader: NSDictionary {
+        return [
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        ]
     }
     
     var baseUrl: URL {

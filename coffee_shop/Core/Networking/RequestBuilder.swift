@@ -53,5 +53,4 @@ class RequestBuilder: NSObject {
         }
         return urlRequest
     }
-    
 }

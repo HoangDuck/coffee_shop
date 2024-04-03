@@ -23,9 +23,6 @@ struct RequestGetListCoffee: RequestTemplate {
     }
     
     var headers: NSDictionary {
-        return [
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        ]
+        return [:]
     }
 }

@@ -18,7 +18,7 @@ struct RequestGetListCoffee: RequestTemplate {
     
     var parameters: NSDictionary {
         return [
-            "s":""
+            "s":"coffee"
         ]
     }
     

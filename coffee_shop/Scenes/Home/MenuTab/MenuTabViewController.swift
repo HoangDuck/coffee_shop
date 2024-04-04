@@ -25,7 +25,7 @@ class MenuTabViewController: UIViewController {
     let coffeeCategoryView: UIScrollView = UIScrollView()
     //views menu coffees
     //var coffeeOptionView: UICollectionView!
-    let coffees: [CoffeeMenu] = CoffeeMenu.mockMenu
+    let coffees: [CoffeeMenu] = []
     
     weak var delegate: MenuTabControllerDelegate?
     

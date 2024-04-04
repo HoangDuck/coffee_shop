@@ -22,7 +22,7 @@ class OnboardingCoordinator: NSObject, OnboardViewControllerDelegate {
         let requestSend = SendableRequest<ListDrinks>(requestTemplate: request)
         requestSend.send(successCallback: {
             data in
-            print(data)
+            print(data ?? [])
         }) {
             error in
             print(error.localizedDescription)

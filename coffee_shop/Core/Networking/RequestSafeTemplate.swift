@@ -27,7 +27,7 @@ class RequestSafeTemplate: NSObject {
     }
     
     var header: NSDictionary {
-        var baseHeader = self.baseHeader
+        let baseHeader = self.baseHeader
         self.requestTemplate.headers.enumerateKeysAndObjects() {
             field, value, _ in
             baseHeader.setValue(value, forKey: field as? String ?? "")
@@ -61,5 +61,4 @@ class RequestSafeTemplate: NSObject {
     var parameters: NSDictionary {
         return requestTemplate.parameters
     }
-    
 }

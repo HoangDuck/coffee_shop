@@ -19,7 +19,7 @@ class SendableRequest<T: Decodable>:NSObject {
         return self.requestBuilder.template
     }
     
-    func send(successCallback:@escaping (Any) -> Void,_ errorCallback:@escaping (Error) -> Void){
+    func send(successCallback:@escaping (T?) -> Void,_ errorCallback:@escaping (Error) -> Void){
         let urlSession = URLSession.shared
         urlSession.dataTask(with: self.requestBuilder.urlRequest) {
             data, response, error in
@@ -27,7 +27,7 @@ class SendableRequest<T: Decodable>:NSObject {
             if ((responseHandler.Error) != nil) {
                 errorCallback(responseHandler.Error!)
             } else if (data != nil){
-                successCallback(responseHandler.result ?? [T]())
+                successCallback(responseHandler.result)
             }
         }.resume()
     }

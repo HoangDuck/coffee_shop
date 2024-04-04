@@ -58,7 +58,7 @@ extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDel
         layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         layout.minimumLineSpacing = 20
         
-        let coffeeOptionView = UICollectionView(frame: CGRect(x: 0, y: 420, width: scrollView.frame.width, height: scrollView.frame.height), collectionViewLayout: layout)
+        coffeeOptionView = UICollectionView(frame: CGRect(x: 0, y: 420, width: scrollView.frame.width, height: scrollView.frame.height), collectionViewLayout: layout)
         scrollView.addSubview(coffeeOptionView)
         coffeeOptionView.backgroundColor = .clear
         coffeeOptionView.dataSource = self

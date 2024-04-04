@@ -29,6 +29,18 @@ class HomeCoordinator: NSObject, HomeViewControllerDelegate,DetailCoffeeCoordina
         coordinators.add(coordinator)
     }
     
+    func didAppearTabOne(viewController: MenuTabViewController) {
+        let request = RequestGetListCoffee()
+        let requestSend = SendableRequest<ListDrinks>(requestTemplate: request)
+        requestSend.send(successCallback: {
+            data in
+            viewController.reloadDataCoffees(drinks: data ?? ListDrinks(drinks: []))
+        }) {
+            error in
+            print(error.localizedDescription)
+        }
+    }
+    
     func start() -> Void {
         let homeViewController = HomeViewController()
         homeViewController.homeDelegate = self

@@ -18,15 +18,6 @@ class OnboardingCoordinator: NSObject, OnboardViewControllerDelegate {
     }
     
     func navigateToHome() {
-        let request = RequestGetListCoffee()
-        let requestSend = SendableRequest<ListDrinks>(requestTemplate: request)
-        requestSend.send(successCallback: {
-            data in
-            print(data ?? [])
-        }) {
-            error in
-            print(error.localizedDescription)
-        }
         let homeCoordinator = HomeCoordinator(navigationController)
         homeCoordinator.start()
     }

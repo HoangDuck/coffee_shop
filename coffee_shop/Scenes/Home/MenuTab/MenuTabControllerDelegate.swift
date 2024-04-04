@@ -9,4 +9,5 @@ import Foundation
 
 protocol MenuTabControllerDelegate: NSObject {
     func didSelectCoffee(coffee :CoffeeMenu)
+    func didAppearTabOne(viewController: MenuTabViewController)
 }

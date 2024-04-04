@@ -31,6 +31,11 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate,MenuTab
         setUpUI()
     }
     
+    
+    func didAppearTabOne(viewController: MenuTabViewController) {
+        self.homeDelegate?.didAppearTabOne(viewController: viewController)
+    }
+    
     private func setUpTabBar() {
         let tab1 = MenuTabViewController()
         tab1.delegate = self

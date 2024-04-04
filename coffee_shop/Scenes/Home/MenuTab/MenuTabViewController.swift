@@ -25,13 +25,29 @@ class MenuTabViewController: UIViewController {
     let coffeeCategoryView: UIScrollView = UIScrollView()
     //views menu coffees
     //var coffeeOptionView: UICollectionView!
-    let coffees: [CoffeeMenu] = []
+    var coffees: [CoffeeMenu] = []
+    var coffeeOptionView: UICollectionView = UICollectionView(frame: .zero,collectionViewLayout: UICollectionViewFlowLayout())
     
     weak var delegate: MenuTabControllerDelegate?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.delegate?.didAppearTabOne(viewController: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
+    }
+    
+    func reloadDataCoffees(drinks: ListDrinks) {
+        coffees = drinks.drinks?.map {
+            drink in
+            return CoffeeMenu(imageMenu: UIImage(named: "coffee_1")!, ratings: "5.0", title: drink.strDrink ?? "", notes: "note", price: "4.5", priceValue: 4.5, description: "azsjkdlsa", numberRatings: "4")
+        } ?? []
+        DispatchQueue.main.async {
+            self.coffeeOptionView.reloadData()
+        }
     }
     
     private func setUpUI(){

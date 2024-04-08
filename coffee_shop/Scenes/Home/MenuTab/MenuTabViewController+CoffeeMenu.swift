@@ -17,7 +17,8 @@ extension MenuTabViewController: UICollectionViewDataSource, UICollectionViewDel
         
         let coffeeItem = coffees[indexPath.row]
         //image coffee
-        cell.imageView = UIImageView(image: coffeeItem.imageMenu)
+        cell.imageView = UIImageView()
+        cell.imageView.load(url: URL(string: coffees[indexPath.row].imageUrl)!)
         cell.imageView.layer.masksToBounds = true
         cell.imageView.layer.cornerRadius = 20
         cell.imageView.contentMode = .scaleAspectFill

@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Foundation
 
 extension DetailViewController {
     func addCoffeeTitle() {
         //image coffee
-        let imageView = UIImageView(image: coffee?.imageMenu)
+        let imageView = UIImageView()
+        imageView.load(url: URL(string: coffee?.imageUrl ?? "")!)
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 20
         imageView.contentMode = .scaleAspectFill

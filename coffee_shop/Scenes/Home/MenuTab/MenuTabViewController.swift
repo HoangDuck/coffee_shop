@@ -43,7 +43,7 @@ class MenuTabViewController: UIViewController {
     func reloadDataCoffees(drinks: ListDrinks) {
         coffees = drinks.drinks?.map {
             drink in
-            return CoffeeMenu(imageMenu: UIImage(named: "coffee_1")!, ratings: "5.0", title: drink.strDrink ?? "", notes: "note", price: "4.5", priceValue: 4.5, description: "azsjkdlsa", numberRatings: "4")
+            return CoffeeMenu( ratings: "4.7", title: drink.strDrink ?? "", notes: "With chocolate", price: "$ 4.5", priceValue: 4.5, description: "This is \(drink.strDrink ?? "")", numberRatings: "200",imageUrl: drink.strDrinkThumb ?? "")
         } ?? []
         DispatchQueue.main.async {
             self.coffeeOptionView.reloadData()

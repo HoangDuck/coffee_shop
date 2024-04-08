@@ -14,7 +14,8 @@ extension OrderViewController {
         viewCoffeeNumber.widthAnchor.constraint(equalToConstant: scrollView.frame.width-60).isActive = true
         viewCoffeeNumber.heightAnchor.constraint(equalToConstant: 55).isActive = true
         //let image
-        let imageView = UIImageView(image: coffee?.imageMenu)
+        let imageView = UIImageView()
+        imageView.load(url: URL(string: coffee?.imageUrl ?? "")!)
         imageView.frame = CGRect(x: 0, y: 0, width: 55, height: 55)
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 15

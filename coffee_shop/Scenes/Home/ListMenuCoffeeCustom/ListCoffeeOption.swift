@@ -5,6 +5,7 @@
 //  Created by TE-Member on 26/02/2024.
 //
 
+import Foundation
 import UIKit
 
 class ListCoffeeOption: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -19,7 +20,8 @@ class ListCoffeeOption: UICollectionView, UICollectionViewDataSource, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CoffeeItem", for: indexPath) as! ItemCoffeeView
         let coffeeItem = coffees[indexPath.row]
         //image coffee
-        cell.imageView = UIImageView(image: coffeeItem.imageMenu)
+        cell.imageView = UIImageView()
+        cell.imageView.load(url: URL(string: coffees[indexPath.row].imageUrl)!)
         //title coffee
         cell.titleCoffee.text = coffeeItem.title
         cell.titleCoffee.textColor = .black

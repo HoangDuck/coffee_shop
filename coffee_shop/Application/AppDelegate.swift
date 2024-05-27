@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class App2Delegate: UIResponder, UIApplicationDelegate {
 
 
 

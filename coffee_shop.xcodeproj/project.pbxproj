@@ -49,6 +49,9 @@
 		C0E230562BA14D51004C902D /* DeliveryViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E230552BA14D51004C902D /* DeliveryViewController+Actions.swift */; };
 		C0E230582BA15516004C902D /* UserLocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E230572BA15516004C902D /* UserLocationAnnotation.swift */; };
 		C0E2305B2BA1A677004C902D /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2305A2BA1A677004C902D /* LocationDataManager.swift */; };
+		C0E6324A2C60C624001ECD03 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C0E632492C60C624001ECD03 /* SnapKit */; };
+		C0E6324C2C60C624001ECD03 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = C0E6324B2C60C624001ECD03 /* SnapKit-Dynamic */; };
+		C0E6324D2C60C624001ECD03 /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = C0E6324B2C60C624001ECD03 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C0E934272B96D4B400C544D7 /* DetailViewController+Ratings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E934262B96D4B400C544D7 /* DetailViewController+Ratings.swift */; };
 		C0E934292B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E934282B96FFFD00C544D7 /* DetailViewController+DescriptionCoffee.swift */; };
 		C0E9342B2B97076D00C544D7 /* DetailViewController+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9342A2B97076D00C544D7 /* DetailViewController+Size.swift */; };
@@ -88,6 +91,20 @@
 			remoteInfo = coffee_shop;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C0E6324E2C60C624001ECD03 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C0E6324D2C60C624001ECD03 /* SnapKit-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		335580052B7F5E2F00974CF7 /* coffee_shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffee_shop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +182,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E6324A2C60C624001ECD03 /* SnapKit in Frameworks */,
+				C0E6324C2C60C624001ECD03 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +211,7 @@
 				3355801E2B7F5E3000974CF7 /* coffee_shopTests */,
 				335580282B7F5E3000974CF7 /* coffee_shopUITests */,
 				335580062B7F5E2F00974CF7 /* Products */,
+				C0E632482C60C624001ECD03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -375,6 +395,13 @@
 			path = LocationManager;
 			sourceTree = "<group>";
 		};
+		C0E632482C60C624001ECD03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C0F5D2872B8C3409006EB2D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,12 +504,17 @@
 				335580012B7F5E2F00974CF7 /* Sources */,
 				335580022B7F5E2F00974CF7 /* Frameworks */,
 				335580032B7F5E2F00974CF7 /* Resources */,
+				C0E6324E2C60C624001ECD03 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = coffee_shop;
+			packageProductDependencies = (
+				C0E632492C60C624001ECD03 /* SnapKit */,
+				C0E6324B2C60C624001ECD03 /* SnapKit-Dynamic */,
+			);
 			productName = coffee_shop;
 			productReference = 335580052B7F5E2F00974CF7 /* coffee_shop.app */;
 			productType = "com.apple.product-type.application";
@@ -555,6 +587,9 @@
 				Base,
 			);
 			mainGroup = 33557FFC2B7F5E2F00974CF7;
+			packageReferences = (
+				C0E632472C60C604001ECD03 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 335580062B7F5E2F00974CF7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -853,6 +888,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lightup.coffeeshop.coffee-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -883,6 +919,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lightup.coffeeshop.coffee-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1052,6 +1089,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lightup.coffeeshop.coffee-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1140,6 +1178,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C0E632472C60C604001ECD03 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0E632492C60C624001ECD03 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0E632472C60C604001ECD03 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		C0E6324B2C60C624001ECD03 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0E632472C60C604001ECD03 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 33557FFD2B7F5E2F00974CF7 /* Project object */;
 }
